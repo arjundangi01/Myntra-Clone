@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>product page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./product.css" />
+    <link rel="stylesheet" href="./dropdown.css" />
+    <link rel="stylesheet" href="./section.css">
+  </head>
+  <body>
+    <div id="productParent_0">
+      <div>
+        <p>Home &nbsp/&nbsp Clothing &nbsp/ &nbsp<span>Men T-shirts</span></p>
+        <p>Men T-Shirts <span></span></p>
+      </div>
+      <div id="product-filter-div">
+        <div>
+          <h3>FILTERS</h3>
+        </div>
+        <div id="list1" class="dropdown-check-list" >
+          <span id="country-filt">Country Of Origin<button id="country-button">
+              <i class="fas fa-chevron-down fa-sm"></i></button
+          ></span>
+         
+           
+          <div id="not-visible">
+             
+             <input type="checkbox" /> <label for="">All countries</label>
+             <input type="checkbox" /> <label for="">India</label>
+            
+          </div>
+       
+        </div>
+        <div id="sort-drop">
+          <p>Sort by : <span>Recommended</span> &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp <i class="fas fa-chevron-down fa-sm"></i></p>
+          <div>
+            <p id="Recommended" >Recommended</p>
+            <p id="Popularity">Popularity</p>
+            <p id="Price-High-to-Low">Price High to Low</p>
+            <p id="Price-Low-to-High">Price Low to High</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <div id="productParent_1">
+      <div id="productSidebar">
+        <div id="filterBrand">
+          <h5>BRAND</h5>
+          <form action="">
+            <input class="brands" type="checkbox" value="Roadster" />
+            <label for=""> Roadster</label><br />
+
+            <input class="brands" type="checkbox" value="Friskerst" />
+            <label for=""> Friskerst</label><br />
+
+            <input
+              class="brands"
+              type="checkbox"
+              value="HRX by Hrithik Roshan"
+            />
+            <label for=""> HRX by Hrithik Roshan</label><br />
+
+            <input class="brands" type="checkbox" value="WROGN" />
+            <label for=""> WROGN</label><br />
+
+            <input class="brands" type="checkbox" value="U.S. Polo Assn." />
+            <label for=""> U.S. Polo Assn.</label><br />
+
+            <input class="brands" type="checkbox" value="Tommy Hilfiger" />
+            <label for=""> Tommy Hilfiger</label><br />
+
+            <input class="brands" type="checkbox" value="Jack & Jones" />
+            <label for="">Jack & Jones</label><br />
+
+            <input class="brands" type="checkbox" value="HERE&NOW" />
+            <label for=""> HERE&NOW</label>
+          </form>
+        </div>
+        <hr />
+        <div id="filterPrice">
+          <h5>PRICE</h5>
+          <form action="">
+            <input class="price" type="checkbox" value="124-4843"/>
+            <label for=""> Rs. 124 to Rs. 4843</label><br />
+            <input class="price" type="checkbox" value="4843-9562"/>
+            <label for=""> Rs. 4843 to Rs. 9562</label><br />
+            <input class="price" type="checkbox" value="9562-4281" />
+            <label for=""> Rs. 9562 to Rs. 14281</label><br />
+            <input class="price" type="checkbox" value="14281-19000" />
+            <label for=""> Rs. 14281 to Rs. 19000</label>
+          </form>
+        </div>
+        <hr />
+        <div id="filterColor">
+          <h5>COLOR</h5>
+          <form action="">
+            <input class="color" type="checkbox" value="black" />
+            <label for=""> Black</label><br />
+
+            <input class="color" type="checkbox" value="blue" />
+            <label for=""> Blue</label><br />
+
+            <input class="color" type="checkbox" value="white" />
+            <label for=""> White</label><br />
+
+            <input class="color" type="checkbox" value="green" />
+            <label for=""> Green</label><br />
+
+            <input class="color" type="checkbox" value="red" />
+            <label for=""> Red</label>
+          </form>
+        </div>
+        <hr />
+        <div style="height: 400px" id="flterDiscountRange">
+          <h5>DISCOUNT RANGE</h5>
+          <form action="">
+            <input type="checkbox" />
+            <label for=""> 10% and above</label><br />
+            <input type="checkbox" />
+            <label for=""> 20% and above</label><br />
+            <input type="checkbox" />
+            <label for=""> 30% and above</label><br />
+            <input type="checkbox" />
+            <label for=""> 40% and above</label><br />
+            <input type="checkbox" />
+            <label for=""> 50% and above</label><br />
+            <input type="checkbox" />
+            <label for=""> 60% and above</label><br />
+            <input type="checkbox" />
+            <label for=""> 70% and above</label><br />
+            <input type="checkbox" />
+            <label for=""> 80% and above</label>
+          </form>
+        </div>
+      </div>
+      <hr />
+      <div id="product-page-product-div">
+        <div id="product-page-item-div"></div>
+
+        <hr />
+
+        <div id="product-page-list">
+          <div>
+            <p>Page 1 of 2115</p>
+          </div>
+          <div>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+          </div>
+          <div>
+            <button id="btn-next">Next &nbsp;&nbsp; <span><i class="fa fa-angle-right" style="font-size:0.8rem"></i></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+
+    <div id="product-page-footer-parent-1">
+      <div id="footer-buy">
+        <p>
+          T-shirts are without a doubt every mans favourite garment. They are
+          versatile, stylish and can be worn in a million different ways. In
+          fact, there are so many varieties when it comes to t-shirts for men
+          that it could be difficult to settle on a particular kind while
+          shopping. A t-shirt can be styled even with shirts for men to create
+          fun ensembles that are semi-formal or smart casual. There is a t-shirt
+          for men that can complement any kind of lowers that you might have in
+          mind, be it track pants, lounge shorts or innerwear.
+          <br />
+          <br />
+          You can also select and style a t-shirt for men according to the
+          season and occasion, which means that the same garment could be used
+          to create completely different looks entirely depending on the
+          scenario and weather. However, to be able to do this successfully, you
+          must first have an understanding of styling t-shirts and your personal
+          preference; this includes how you would like to project yourself. Read
+          on to find out more.
+        </p>
+        <h5>STYLING A T-SHIRT FOR MEN</h5>
+        <p>
+          We have covered the basics and thrown in a couple of tricks to style a
+          t-shirt for men in the best way, so read on and take notes.
+          <br /><br />
+          Colours
+          <br /><br />
+          When it comes to a t-shirt for men, there are a few colours which are
+          essential in any wardrobe. These are the most basic colours which will
+          set the tone for your collection; they are white, black, navy blue and
+          grey. Apart from this, you can also add on dark shades of maroon,
+          green and brown to mix and match with your joggers or tracksuits.
+          <br /><br />
+          Fits
+          <br /><br />
+          Generally speaking, the fits of t-shirts for men range from long-line,
+          regular, slim, fitted and loose. There is no set rule in particular
+          when it comes to choosing one over the other. Having said that, you
+          must take time to know what works best with your body type and fashion
+          sensibilities. For instance, a fitted t-shirt for men would flatter a
+          fit physique or can work to be an inner layer, for a winter look.
+          <br /><br />
+          Necklines
+          <br /><br />
+          The three most common necklines are crew, scoop and V-neck but there
+          are combinations and variations of these too. You are likely to notice
+          that the crew neckline is the most versatile style and is worn widely.
+          To start off your collection, you can work with an understanding of
+          the above-mentioned options and choose accordingly.
+        </p>
+        <h5>SELECT A T-SHIRT FOR MEN ONLINE</h5>
+        <p>
+          We have an absolutely wide variety of t-shirts for men on Myntra and
+          here are a few of our favourites to start you off in the right
+          direction.
+          <br /><br />
+          GAS Men Black Printed Round Neck T-shirt
+          <br /><br />
+          If you are all about that rocker chic look, then this t-shirt for men
+          is surely up your alley. It has a round neckline, short sleeves and a
+          graphic print in front. This can be paired with tapering jeans,
+          sneakers and a leather strap watch.
+          <br /><br />
+          Nike Men Blue Polo Collar T-shirt
+          <br /><br />
+          Whether you enjoy playing cricket or are a fan of the game, you should
+          definitely have this piece in your collection. It is made of
+          light-weight polyester and boasts Nikes DRI-FIT technology.
+          <br /><br />
+          Polo Ralph Lauren Cotton Blend Fleece Pullover
+          <br /><br />
+          This t-shirt is inspired by old-school baseball tees and is washed to
+          have a vintage look. The grey melange and navy colours complement
+          cargo pants or lounge shorts and will look great paired with white
+          sneakers.
+        </p>
+        <h5>GET YOUR SHOPPING ON!</h5>
+        <p>
+          Visit Myntra and transform your closet with garments for every
+          occasion. We bring you all the top brands at your fingertips, with the
+          best discounts and a wide selection to pick from. So log in to Myntra
+          today and get shopping on-the-go!
+        </p>
+        <ul>
+          <li>
+            WHAT ARE THE LATEST TRENDS IN MEN'S T-SHIRTS?
+            <p>
+              Here are some of the latest trends in the men's T-shirt categories
+              that you can shop from:
+            </p>
+            <ul>
+              <li>
+                Typography: Men's T-shirts have seen a new trend with
+                culture-defining quotes printed on them. The minimalist look of
+                the T-shirt makes them a perfect option for all sorts of events.
+                They come in a variety of colours and can be paired with a
+                jacket for parties.
+              </li>
+              <li>
+                Super Hero T-shirts: Men's obsession with comic books has come
+                to an all-time high. Owning a T-shirt of their favourite
+                superhero can generate a sense of pride and motivation.
+              </li>
+            </ul>
+          </li>
+          <li>
+            WHAT'S THE DIFFERENCE BETWEEN DESIGNING A MEN'S T-SHIRT AND WOMEN'S
+            T-SHIRT?
+            <p>
+              The differences between men's and women's T-shirts lies in the
+              physical facets of the design.
+            </p>
+            <ul>
+              <li>
+                T-shirts for women are designed to be shorter than those for
+                men.
+              </li>
+              <li>
+                Men's T-shirts are usually intended to be fitted around the
+                chest and then flow loosely from there. Women's T-shirts are
+                meant to flatter the curves and are more form-fitting.
+              </li>
+              <li>
+                Women's T-shirts have cap sleeves whereas men's T-shirt arms are
+                slightly longer.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h5>BESTSELLER:</h5>
+        <p>
+          Roadster Men White Pure Cotton T-shirt | HRX by Hrithik Roshan Men
+          Yellow Printed Cotton Pure Cotton T-shirt | Urbano Fashion Men Teal
+          Green Slim Fit Tropical Printed Pure Cotton T-shirt | Huetrap Men
+          Beige & Black Typography Printed Sustainable T-shirt | Roadster Men
+          Black Cotton Pure Cotton T-shirt | Louis Philippe Jeans Men Black
+          Graphic Printed Pure Cotton Slim Fit Casual T-shirt | HRX by Hrithik
+          Roshan Men Olive Green Solid Bio-Wash Running Tshirt
+        </p>
+        <h5>SHOP BY BRAND:</h5>
+        <p>
+          Bewakoof | Zivame | Levis | Manyavar | Selected | Skechers | Hopscotch
+          | Jockey | Marks & Spencer | Louis Philippe | Andamen | Tommy Hilfiger
+          | The Souled Store | WineRed | Asics | Monte Carlo | Under Armour |
+          Basics | Chumbak | French Crown | Lacoste | Lee Cooper | Ritu Kumar
+        </p>
+        <h5>SHOP T-SHIRT BY COLOR:</h5>
+        <p>
+          Black T-Shirt For Men | White T-Shirt For Men | White T-shirt For
+          Girls | White T-Shirt For Boys | Brown T-shirt For Men
+        </p>
+        <h4>VIDEO: 5 TShirt Hacks | 5 Ways To Slay | Myntra</h4>
+
+        <embed
+          id="video-embed"
+          src="https://www.youtube.com/embed/cbeJWezqKiM"
+          type=""
+        />
+        <p>
+          Find out the five fun ways of wearing something that all men have in
+          their wardrobe, 'Full Sleeve Tshirt'.
+        </p>
+      </div>
+      <div id="footer-price-list">
+        <table>
+          <thead>
+            <tr>
+              <th>Men T-shirts</th>
+              <th>PRICE (RS)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Roadster Men White Pure Cotton T-shirt</td>
+              <td>Rs. 274</td>
+            </tr>
+            <tr>
+              <td>
+                HIGHLANDER Men White & Blue Colourblocked Slim Fit T-shirt
+              </td>
+              <td>Rs. 274</td>
+            </tr>
+            <tr>
+              <td>Roadster Men Black Pure Cotton T-shirt</td>
+              <td>Rs. 274</td>
+            </tr>
+            <tr>
+              <td>Roadster Men Black & White Printed Round Neck T-shirt</td>
+              <td>Rs. 274</td>
+            </tr>
+            <tr>
+              <td>Roadster Men Grey Melange Solid T-shirt</td>
+              <td>Rs. 274</td>
+            </tr>
+            <tr>
+              <td>
+                Roadster Men Maroon Slub Effect Printed Cotton Pure Cotton
+                T-shirt
+              </td>
+              <td>Rs. 274</td>
+            </tr>
+            <tr>
+              <td>V-Mart Polo Collar Cotton T-shirt</td>
+              <td>Rs. 274</td>
+            </tr>
+            <tr>
+              <td>
+                HIGHLANDER Men Olive Green Typography Printed Round Neck
+                Applique Slim Fit T-shirt
+              </td>
+              <td>Rs. 274</td>
+            </tr>
+            <tr>
+              <td>HERE&NOW Men Black Solid Round Neck T-shirt</td>
+              <td>Rs. 274</td>
+            </tr>
+            <tr>
+              <td>HERE&NOW Men Typography Print Knitted Pure Cotton T-shirt</td>
+              <td>Rs. 274</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="product-page-footer-parent-2">
+      <div>
+        <div>
+          <p>Online Shoping</p>
+          <br />
+          <p>Men</p>
+          <p>Women</p>
+          <p>Kids</p>
+          <p>Home Living</p>
+          <p>Beauty</p>
+          <p>Gift Cards</p>
+          <p>Myntra Insider</p>
+          <br />
+          <p>Useful Links</p>
+          <br />
+          <p>Blog</p>
+          <p>Careers</p>
+          <p>Site Map</p>
+          <p>Corporate Information</p>
+          <p>Whitehatr</p>
+        </div>
+        <div>
+          <p>CUSTOMER POLICIES</p>
+          <br />
+          <p>Contact Us</p>
+          <p>FAQ</p>
+          <p>T&C</p>
+          <p>Terms Of Use</p>
+          <p>Track Orders</p>
+          <p>Cancellation</p>
+          <p>Privacy policy</p>
+          <p>Grievance Officer</p>
+        </div>
+        <div id="app-icon">
+          <p>EXPERIENCE MYNTRA APP ON MOBILE</p>
+
+          <div>
+            <img src="https://bit.ly/3LluZ4L" alt="" />
+            <img src="https://bit.ly/3DmWQys" alt="" />
+          </div>
+          <p>Keep in touch</p>
+          <div>
+            <i class="fa-brands fa-facebook-square"></i>
+            <i class="fa-brands fa-twitter-square"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+        <div id="original-tag">
+          <div>
+            <img src="https://bit.ly/3JPiL47" alt="" />
+            <p>100% ORIGINAL guarantee for all products at myntra.com</p>
+          </div>
+          <div>
+            <img src="https://bit.ly/3uBalH4" alt="" />
+            <p>Return within 14days of receiving your order</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>POPULAR SEARCHES</p>
+        <p>
+          Dishant Patel Adidas Arrow Fila Online Shopping Nike Pepe Jeans Puma
+          United Colors Of Benetton Fastrack Shorts Being Human Skirts Woodland
+          Supra Dresses Men Shopping Women Shopping Blazers Sherwani Online
+          Shopping Men Olive Green & Cream Coloured St Rahul Raina Saurabh
+          Sharma Clothing Jewellery T Shirts Shoes Bags Watches Caps Shirts
+          Backpacks Puma Tshirts Woodland Shoes Titan Watches Fastrack Watches
+          Wrangler Shirts Adidas Tshirts Nike Shoes Roadster Shirts Casual Shoes
+          Running Shoes Nike Sports Shoes Jeans Being Human Tshirts Converse
+          Shoes Cricket Shoes
+        </p>
+      </div>
+      <div id="concern">
+        <div>
+          <p>In case of any concern, <span>Contact Us</span></p>
+        </div>
+        <div>
+          <p>© 2023 www.myntra.com. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="./product.js"></script>
+<script src="./drop.js"></script>

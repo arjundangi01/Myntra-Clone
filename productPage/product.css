@@ -1,0 +1,262 @@
+hr{
+ 
+  opacity: 0.25;
+}
+
+/* 0 */
+#productParent_0{
+  margin-left: 1%;
+}
+#product-filter-div{
+  display: flex;
+}
+
+
+/* 0 */
+
+#productParent_1 {
+  display: flex;
+  /* border: 1px solid #000; */
+  /* height: 500px; */
+}
+#productSidebar {
+  margin-left: 1%;
+  width: 16%;
+  /* border: 1px solid #c51414; */
+}
+#productSidebar form label{
+  font-size: 0.78rem;
+ color: #575761;
+  
+}
+#productSidebar form input{
+    margin: 3%;
+    scale: 1.3;
+    opacity: 0.35;
+   
+}
+
+#productSidebar >div h4{
+  margin: 6% 3%;
+  /* border-color: gray; */
+  
+}
+
+
+
+
+
+
+
+ #product-page-product-div {
+  padding: 2%;
+  width: 84%;
+  /* border: 1px solid #0e2097; */
+}
+#product-page-item-div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+ gap: 30px 5%;
+  /* border: 1px solid #000; */
+}
+#product-page-item-div img {
+  width: 100%;
+  
+}
+#product-page-item-div >div {
+  /* height: 50%; */
+  /* border: 1px solid #9f0d0d; */
+  
+}
+#product-page-item-div>div h3{
+  margin: 0;
+  margin-top: 10px;
+  font-size: 1rem;
+  opacity: 0.7;
+  
+}
+/* #item >div>button {
+  
+  visibility: hidden;
+}
+#item >div:hover > .w-btn{
+  
+  visibility: visible;
+} */
+#product-page-item-div >div >p{
+  margin: 4px 0px 7px 0px;
+  font-size: 0.8rem;
+  
+}
+#price-small-div{
+  display: flex;
+  /* justify-content: space-around; */
+  gap: 5px;
+}
+#price-small-div p{
+  margin: 0;
+  font-size: 0.8rem;
+}
+#price-small-div
+ p:nth-child(1){
+  
+  font-weight: bold;
+}
+#price-small-div p:nth-child(2){
+  text-decoration: line-through;
+  color: gray;
+}
+
+#price-small-div p:last-child{
+  color: #ffae95;
+}
+/* page button -------------------------------------------*/
+
+#product-page-list{
+  margin-top: 2rem;
+  display: flex;
+}
+#product-page-list>div:nth-child(1){
+   width: 30%;
+   font-size: 0.8rem;
+   /* border: 1px solid #000; */
+}
+#product-page-list>div:nth-child(2){
+   width: 30%;
+   /* border: 1px solid #000; */
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+#product-page-list>div:nth-child(2) button{
+  border: 1px solid #7a7878;
+  
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  height: 1.9rem;
+  
+}
+#product-page-list>div:nth-child(2) button:active{
+  
+}
+#product-page-list>div:nth-child(2) button:hover{
+  /* border: 1px solid gray; */
+  
+}
+#product-page-list>div:nth-child(3){
+  width: 20%;
+  /* border: 1px solid #000; */
+  display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+#btn-next{
+  height: 2.5rem;
+  width: 6rem;
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.2);
+  font-weight: bold;
+  margin-left: ;
+}
+/* page button -------------------------------------------*/
+
+
+
+/* footer -------------------------------------*/
+#product-page-footer-parent-1{
+  display: flex;
+ 
+  /* border: 1px solid #000; */
+  margin: 5% auto;
+  width: 68%;
+  gap: 3.8rem;
+  font-size: 0.82rem;
+}
+#footer-buy{
+  text-align: justify;
+  width: 65%;
+  
+  /* border: 1px solid #c11919; */
+}
+#footer-buy >p{
+  
+  color: #70707a;
+  /* border: 1px solid #c11919; */
+}
+#footer-price-list{
+  
+  width: 35%;
+  
+}
+
+ul{
+  color: rgb(85, 83, 83);
+  margin-left: -1.5rem;
+  
+}
+ul  ul{
+  color: gray;
+  margin: 1rem;
+  margin-left: -2.5rem;
+}
+
+
+#video-embed{
+  width: 86%;
+  height: 14%;
+}
+#app-icon img{
+  width: 9rem;
+}
+#app-icon img:last-child{
+  width: 8rem;
+}
+#original-tag > div{
+   display: flex;
+
+   gap: 1rem;
+}
+#original-tag > div img{
+  
+    width: 3rem;
+    height: 3rem;
+    margin-top: 0.8rem;
+}
+table{
+  width: 100%;
+  
+}
+td{
+  text-align: left;
+  font-size: 0.8rem;
+  padding: 5px;
+}
+tr{
+  color: gray;
+  height: 2.5rem;
+}
+th{
+  font-size: 0.8rem;
+  padding: 5px;
+  text-align: left;
+}
+
+/* footer 2 -------------------------------------*/
+#product-page-footer-parent-2{
+  
+ 
+  /* border: 1px solid #000; */
+  margin: 10rem auto;
+  width: 68%;
+}
+#product-page-footer-parent-2 > div:first-child{
+  gap: 7%;
+ display: flex;
+}
+#concern{
+  display: flex;
+  justify-content: space-between;
+}
+
