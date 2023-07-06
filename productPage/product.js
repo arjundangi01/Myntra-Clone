@@ -137,6 +137,86 @@ var mensData = [
     strikedoffprice: "2599",
     discount: "(60% off)",
   },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/23132662/2023/5/12/ff564cf3-f711-4ca0-b977-427f65b9858c1683876244201RARERABBITMenNavyBlueStripedPoloCollarPocketsSlimFitT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 18000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/23132662/2023/5/12/ff564cf3-f711-4ca0-b977-427f65b9858c1683876244201RARERABBITMenNavyBlueStripedPoloCollarPocketsSlimFitT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 18000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/23132662/2023/5/12/ff564cf3-f711-4ca0-b977-427f65b9858c1683876244201RARERABBITMenNavyBlueStripedPoloCollarPocketsSlimFitT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 18000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/23132662/2023/5/12/ff564cf3-f711-4ca0-b977-427f65b9858c1683876244201RARERABBITMenNavyBlueStripedPoloCollarPocketsSlimFitT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 18000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/23132662/2023/5/12/ff564cf3-f711-4ca0-b977-427f65b9858c1683876244201RARERABBITMenNavyBlueStripedPoloCollarPocketsSlimFitT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 18000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/23132662/2023/5/12/ff564cf3-f711-4ca0-b977-427f65b9858c1683876244201RARERABBITMenNavyBlueStripedPoloCollarPocketsSlimFitT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 18000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/14152094/2021/4/21/70d97f62-26cc-4589-a16b-fdc8b2d242141618988889184HIGHLANDERMenLimeGreenSolidRoundNeckT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 16000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/14152094/2021/4/21/70d97f62-26cc-4589-a16b-fdc8b2d242141618988889184HIGHLANDERMenLimeGreenSolidRoundNeckT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 16000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
 ];
 // console.log(mensData);
 
@@ -198,8 +278,9 @@ function display(array) {
     wishlist_button.addEventListener("click", function () {});
     // ---------------------------------------------------------------------------
     div.append(img, h3, name, smalldiv);
-
+    
     parent.append(div);
+    
   });
 }
 
@@ -233,6 +314,11 @@ p4.addEventListener("click", function () {
 
 var brandsCheckboxes = Array.from(document.querySelectorAll(".brands"));
 var colorCheckboxes = Array.from(document.querySelectorAll(".color"));
+ 
+// console.log(colorCheckboxes2)
+
+
+
 var priceCheckboxes = Array.from(document.querySelectorAll(".price"));
 
 // Add event listeners to the checkboxes
@@ -252,8 +338,10 @@ updateDisplay();
 
 function updateDisplay() {
   // Get the selected brands
+  
   var selectedBrands = brandsCheckboxes
     .filter(function (checkbox) {
+      
       return checkbox.checked;
     })
     .map(function (checkbox) {
