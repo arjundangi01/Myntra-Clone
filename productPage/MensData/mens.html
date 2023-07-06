@@ -11,14 +11,48 @@
     />
 </head>
 <body>
-    <div class="slider">
-        <div id="slides">
-            <div class="slide"> <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/4/010a905b-66f1-4980-8ddf-f15223db62211688474900828-Wishlist-Now_DK.jpg" alt=""></div>
-            <div class="slide"> <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/3/e384cb32-690c-4ccf-a6cb-61df36960bb21651599573972-Workwear_Desk.jpg" alt=""></div>
-            <div class="slide"> <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/3/b54399f0-6ed5-44b3-84b0-e9d5c1657aaa1651599573991-CR7_Desk_Baner.jpg" alt=""></div>
-            <div class="slide"> <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/3/846beb79-ada7-48c3-a6c6-4448f276c2111651599573979-Sports-Shoes_Desk.jpg" alt=""></div>
-     
-         </div>
+    <div class="section1">
+        <div class="slider">
+            <div class="slides">
+                 <!-- radio buttons -->
+                 <input type="radio" name="radio-btn" id="radio1">
+                 <input type="radio" name="radio-btn" id="radio2">
+                 <input type="radio" name="radio-btn" id="radio3">
+                 <input type="radio" name="radio-btn" id="radio4">
+                 
+                 <div class="slide first">
+                    <a href=""> <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/4/010a905b-66f1-4980-8ddf-f15223db62211688474900828-Wishlist-Now_DK.jpg" alt="slider"></a>
+                 </div> 
+                    
+                 <div class="slide ">
+                    <a href=""> <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/6/27/53b4daed-cd2c-4111-86c5-14f737eceb351656325318973-Handbags_Desk.jpg" alt="slider"></a>
+                 </div> 
+                    
+                 <div class="slide ">
+                    <a href=""> <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/6107d28b-2bcb-44e6-9743-655b54550b8f1659020199598-Workwear_Desk--1-.jpg" alt="slider"></a>
+                 </div> 
+                    
+                 <div class="slide ">
+                    <a href=""> <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/0174e4d7-448c-4746-8572-69461ad5be101659020268081-Tops---Tees_Desk.jpg" alt="slider"></a>
+                 </div> 
+        
+                 <div class="navigation-auto">
+                    <div class="autobtn-1"></div>
+                    <div class="autobtn-2"></div>
+                    <div class="autobtn-3"></div>
+                    <div class="autobtn-4"></div>
+                 </div> 
+                 
+            </div>
+         <div class="navigation-manual">
+            <label for="radio1" class="manual-btn" ></label>
+            <label for="radio2" class="manual-btn" ></label>
+            <label for="radio3" class="manual-btn" ></label>
+            <label for="radio4" class="manual-btn" ></label>
+          
+        </div> 
+        
+          </div>
     </div>
   
 
@@ -290,3 +324,16 @@
   
 </body>
 </html>
+
+<script>
+    var counter=1;
+
+setInterval (function(){
+    document.getElementById('radio'+ counter).checked=true;
+counter++;
+if(counter>4){
+    counter=1;
+}
+},5000)
+
+</script>

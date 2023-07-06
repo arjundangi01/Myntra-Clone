@@ -217,6 +217,56 @@ var mensData = [
     strikedoffprice: "2599",
     discount: "(60% off)",
   },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/14152094/2021/4/21/70d97f62-26cc-4589-a16b-fdc8b2d242141618988889184HIGHLANDERMenLimeGreenSolidRoundNeckT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 16000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/14152094/2021/4/21/70d97f62-26cc-4589-a16b-fdc8b2d242141618988889184HIGHLANDERMenLimeGreenSolidRoundNeckT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 16000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/14152094/2021/4/21/70d97f62-26cc-4589-a16b-fdc8b2d242141618988889184HIGHLANDERMenLimeGreenSolidRoundNeckT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 16000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/14152094/2021/4/21/70d97f62-26cc-4589-a16b-fdc8b2d242141618988889184HIGHLANDERMenLimeGreenSolidRoundNeckT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 16000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
+  {
+    image_url:
+      "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/14152094/2021/4/21/70d97f62-26cc-4589-a16b-fdc8b2d242141618988889184HIGHLANDERMenLimeGreenSolidRoundNeckT-shirt1.jpg",
+    brand: "HERE&NOW",
+    name: "Men V neck solid T-shirt",
+
+    price: "Rs 16000",
+    strikedoffprice: "2599",
+    discount: "(60% off)",
+  },
 ];
 // console.log(mensData);
 
@@ -225,7 +275,13 @@ display(mensData);
 function display(array) {
   var parent = document.querySelector("#product-page-item-div");
   parent.innerHTML = "";
-  array.map(function (element, index) {
+  
+  for (var index = 0; index < 15; index++){
+    var element = array[index]
+
+   
+    
+
     var div = document.createElement("div");
     var img = document.createElement("img");
     img.setAttribute("src", element.image_url);
@@ -268,6 +324,7 @@ function display(array) {
         price: element.price,
         strikedoffprice: element.strikedoffprice,
         discount: element.discount,
+        
       };
       cartArray.push(obj);
       localStorage.setItem("cartArray", JSON.stringify(cartArray));
@@ -281,7 +338,10 @@ function display(array) {
     
     parent.append(div);
     
-  });
+  
+    
+    
+  }
 }
 
 

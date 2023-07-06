@@ -7,10 +7,25 @@ body p{
 }
 
 #list1{
+  
   /* border: 1px solid #000; */
-  height: 3rem;
-  overflow: hidden;
+  /* height: 3rem; */
+  /* overflow: hidden; */
   margin: 1rem 0rem 0rem 12rem;
+}
+#list1 span{
+  /* width: auto; */
+  width: 11rem;
+  opacity: 0.7;
+ 
+  padding: 0.2rem 0.2rem 0.2rem 1rem;
+ 
+  
+}
+#list1 span:hover{
+  background-color: rgba(128, 128, 128, 0.115);
+  border-radius: 1rem;
+  
 }
 
 #not-visible{
