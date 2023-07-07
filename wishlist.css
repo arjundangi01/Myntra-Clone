@@ -1,0 +1,154 @@
+#lastsection>a{
+    display: inline-block;
+    text-decoration: none;
+    color: #aaa;
+    padding-right: 16px;
+    margin: 4px;
+    border-right: 1px solid #aaa;
+    text-transform: capitalize;  
+}
+#payment span{
+    font-weight:700 ;
+}
+#payment img{
+    display: inline-block;
+    width: 48px;
+    height: 40px;
+    margin-top: 2px;
+}
+#payment > div{
+    display: flex;
+    gap: 30px;
+}
+#payment > div:nth-child(2){
+    margin-top: 48px;
+}
+.onlineshop h4{
+    margin-bottom: 30px;
+  }
+ 
+  .onlineshop img{
+      height: 42px;
+  }
+  .onlineshop > #right{
+        width: 30%;
+  }
+  #footer{
+    width: 100%;
+    padding-bottom: 130px;
+    background-color: var(--secondaryColor);
+}
+.onlineshop hr {
+  width: 75%;
+  margin: auto;
+  margin-top: 4rem;
+}
+hr{
+    margin-top: 1rem;
+    color: #eeeeee;
+}
+#footer h4{
+  text-transform: uppercase;
+  color: #505050;
+}
+#footer > .onlineshop{
+    padding: 5rem 0 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.onlineshop > #left{
+      width: 65%;
+      color: #868585;
+      font-weight: 400;
+      text-transform: capitalize;
+      line-height: 2.7rem;
+      display: flex;
+}
+#left> *{
+    flex: 1;
+}
+#left a{
+    text-decoration: none;
+    color: #aaa;
+    padding-right: 16px;
+    margin: 4px;
+    display: flex;
+    text-transform: capitalize;
+}
+#left > div:nth-child(3){
+    flex: 1.5;
+}
+.onlineshop #social_connect{
+  margin-top: 2rem;
+}
+#social_connect + div{
+    font-size: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+#payment  div {
+    display: flex;
+    gap: 2rem;
+
+}
+.onlineshop > #payment{
+    width: 30%;
+}
+#payment img{
+    display: inline-block;
+    width: 48px;
+    height: 40px;
+    margin-top: 2px;
+}
+#payment span{
+  font-weight: 700;
+}
+#payment > div:nth-child(2){
+    margin-top: 3rem;
+}
+#lastsectoin > p{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+}
+button{
+    background-color: #ff3f6c;
+    color: white;
+    border: 10px;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-top: 20px;
+
+}
+#container{
+    width: 70%;
+    padding: 1rem;
+    margin-top: 20px;
+    display: flex;
+    border-radius: 4px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+#container >div{
+    padding: 8px ;
+    width: 50%;
+    
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    text-align: center;
+}
+#container img{
+    width: 100%;
+}
+#container>div>div p:nth-child(4){
+    text-decoration: line-through;
+    color: gray;
+  
+}
+#container>div>div p:nth-child(5){
+    
+    color: #f3958f;
+  
+}

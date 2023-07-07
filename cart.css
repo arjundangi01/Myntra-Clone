@@ -46,13 +46,10 @@ body{
 #saletime span{
     color:#fe3f9b;
 }
-.container{
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-}
-.main{
-    width: 80%;
+
+.container>div{
+    width: 60%;
+
     padding: 1rem;
     margin-top: 20px;
     display: flex;
@@ -61,21 +58,14 @@ body{
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
-.main >div{
-    padding: 8px ;
-    width: 30%;
+
+.container img{
+    width: 50%;
 }
-.main img{
-    width: 100%;
-}
-.main >div:last-child{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.main button{
+
+.container button{
     width: 80%;
+    margin-top: 50px;
 }
 
 .wishlist{
@@ -94,9 +84,10 @@ body{
 margin: 5px;
 }
 .wishlist > p:hover{
-    color:#32cd32;
+    
     font-weight: 900;
     border-bottom: 2px solid #ff3f6c;
+    cursor: pointer;
 }
 .container span{
     margin: 4px;
@@ -164,4 +155,28 @@ button{
 .amount + p{
     text-align: center;
     font-size: 20px;
+}
+.container{
+
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+
+}
+.container>div h3{
+    display: grid;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.container>div>div p:nth-child(4){
+    text-decoration: line-through;
+    color: gray;
+  
+}
+
+.container>div>div p:nth-child(5){
+    
+    color: #f3958f;
+  
 }

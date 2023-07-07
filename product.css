@@ -1,0 +1,94 @@
+hr{
+ 
+  opacity: 0.25;
+}
+#parent_1 {
+  display: flex;
+  /* border: 1px solid #000; */
+  /* height: 500px; */
+}
+#sidebar {
+  margin-left: 1%;
+  width: 16%;
+  /* border: 1px solid #c51414; */
+}
+#sidebar form label{
+  font-size: 90%;
+ color: #646573;
+  
+}
+#sidebar form input{
+   margin: 3%;
+    scale: 1.3;
+    opacity: 0.35;
+   
+}
+
+#sidebar >div h4{
+  margin: 6% 3%;
+  /* border-color: gray; */
+  
+}
+
+
+
+
+
+ #product_div {
+  padding: 2%;
+  width: 84%;
+  /* border: 1px solid #0e2097; */
+}
+#item {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+ gap: 30px 5%;
+  /* border: 1px solid #000; */
+}
+#item img {
+  width: 100%;
+  
+}
+#item >div {
+  /* height: 50%; */
+  /* border: 1px solid #9f0d0d; */
+  
+}
+#item >div h3{
+  margin: 0;
+  margin-top: 10px;
+  
+}
+/* #item >div>button {
+  
+  visibility: hidden;
+}
+#item >div:hover > .w-btn{
+  
+  visibility: visible;
+} */
+#item >div >p{
+  margin: 4px 0px 7px 0px;
+  
+}
+#small-div{
+  display: flex;
+  /* justify-content: space-around; */
+  gap: 5px;
+}
+#small-div p{
+  margin: 0;
+}
+#small-div p:nth-child(1){
+  
+  font-weight: bold;
+}
+#small-div p:nth-child(2){
+  text-decoration: line-through;
+  color: gray;
+}
+
+#small-div p:last-child{
+  color: #ffae95;
+}
+
