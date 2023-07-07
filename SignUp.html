@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./SignUP.css">
 </head>
 <body>
-    <div id="SignUpForm">
-        <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2023/1/25/f5e9a029-33c3-4a92-811b-ef7917fe6d441674670210687-offer-banner-300-600x240-code-_-MYNTRA300.jpg" alt="Coupon Banner">
-        <div><h1>Login</h1> <p>or</p> <h1>SignUp</h1></div>
-        <form >
-            <input type="number" >
-            <p>By continuing,I agree to the <a href=""></a></p>
-        </form>
+    <div id="signup">
+        <div id="couponimg"><img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2023/1/25/f5e9a029-33c3-4a92-811b-ef7917fe6d441674670210687-offer-banner-300-600x240-code-_-MYNTRA300.jpg" alt="Coupon Banner"></div>
+        <div id="formcontainer">
+            <div id="formheading" ><span >Login</span> or <span>SignUp</span></div>
+            <div id="signupform">
+                <form >
+                    <div >
+                        <input type="tel" id="mobileno">
+                        <!-- <span>+91 <span>|</span></span>  -->
+                    </div>
+                    <div>By continuing,I agree to the <a href="#" style="color :#ff3f6c; text-decoration: none;" >Terms of Use</a> & <a href="#" style="color :red; text-decoration: none;"> Privacy Policy</a></div>
+                    <input type="submit" value="CONTINUE" id="continue">
+                    <div>Have trouble logging in ?  <a href="#" style="color :#ff3f6c; text-decoration: none;" >Get help</a></div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
+<Script src="./SignUp.js" ></Script>

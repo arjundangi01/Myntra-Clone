@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Page</title>
+    <link rel="stylesheet" href="./verificationPage.css">
+</head>
+<body>
+    <div id="verification">
+        <div id="dailboardimg"><img src="https://constant.myntassets.com/pwa/assets/img/3a438cb4-c9bf-4316-b60c-c63e40a1a96d1548071106233-mobile-verification.jpg" alt="mobile dailboard"></div>
+        
+        <div id="otpcontainer">
+            <h3>Verify with OTP</h3>
+            <h4>Sent to <span></span></h4>
+            <div id="otpform"> 
+                <input type="tel"  maxlength="1"  id="box1">
+                <input type="tel"  maxlength="1"  id="box2">
+                <input type="tel"  maxlength="1"  id="box3">
+                <input type="tel"  maxlength="1"  id="box4">
+            </div>
+            <div >
+                <button type="reset" id="resetotp">RESEND OTP</button>
+                <button type="reset" id="next">NEXT</button>
+            </div>
+        </div>
+
+        <div >Login in using <a href="./Login.html" >Password</a></div>
+        <div>Having trouble logging in? <a href="#">Get help</a></div>
+    </div>
+</body>
+<script src="./verificationPage.js"></script>
