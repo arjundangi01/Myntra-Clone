@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="./product.css" />
     <link rel="stylesheet" href="./dropdown.css" />
-    <link rel="stylesheet" href="./section.css">
+   <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="./footer.css">
   </head>
   <body>
@@ -23,28 +23,31 @@
         <div>
           <h3>FILTERS</h3>
         </div>
-        <div id="list1" class="dropdown-check-list" >
-          <span id="country-filt">Country Of Origin<button id="country-button">
-              <i class="fas fa-chevron-down fa-sm"></i></button
-          ></span>
-         
+        <div>
+          <div id="list1" class="dropdown-check-list" >
+            <span id="country-filt">Country Of Origin<button id="country-button">
+                <i class="fas fa-chevron-down fa-sm"></i></button
+            ></span>
            
-          <div id="not-visible">
              
-             <input type="checkbox" /> <label for="">All countries</label>
-             <input type="checkbox" /> <label for="">India</label>
-            
+            <div id="not-visible">
+               
+               <input class="origin" type="checkbox" value="All" /> <label for="">All countries</label>
+               <input class="origin" type="checkbox" value="India"/> <label for="">India</label>
+              
+            </div>
+         
           </div>
-       
+          <div id="sort-drop">
+            <p>Sort by : <span>Recommended</span> &nbsp <i class="fas fa-chevron-down fa-sm"></i></p>
+            <div>
+              <p id="Recommended" >Recommended</p>
+              <p id="Popularity">Popularity</p>
+              <p id="Price-High-to-Low">Price High to Low</p>
+              <p id="Price-Low-to-High">Price Low to High</p>
+            </div>
         </div>
-        <div id="sort-drop">
-          <p>Sort by : <span>Recommended</span> &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp <i class="fas fa-chevron-down fa-sm"></i></p>
-          <div>
-            <p id="Recommended" >Recommended</p>
-            <p id="Popularity">Popularity</p>
-            <p id="Price-High-to-Low">Price High to Low</p>
-            <p id="Price-Low-to-High">Price Low to High</p>
-          </div>
+       
         </div>
       </div>
     </div>
@@ -58,8 +61,8 @@
             <input class="brands" type="checkbox" value="Roadster" />
             <label for=""> Roadster</label><br />
 
-            <input class="brands" type="checkbox" value="Friskerst" />
-            <label for=""> Friskerst</label><br />
+            <input class="brands" type="checkbox" value="Friskers" />
+            <label for=""> Friskers</label><br />
 
             <input
               class="brands"
@@ -69,8 +72,7 @@
             />
             <label for="HRX-by-Hrithik-Roshan"> HRX by Hrithik Roshan</label><br />
 
-            <input class="brands" type="checkbox" value="WROGN" />
-            <label for=""> WROGN</label><br />
+            
 
             <input class="brands" type="checkbox" value="U.S. Polo Assn." />
             <label for=""> U.S. Polo Assn.</label><br />
@@ -78,9 +80,7 @@
             <input class="brands" type="checkbox" value="Tommy Hilfiger" />
             <label for=""> Tommy Hilfiger</label><br />
 
-            <input class="brands" type="checkbox" value="Jack & Jones" />
-            <label for="">Jack & Jones</label><br />
-
+          
             <input class="brands" type="checkbox" value="HERE&NOW" />
             <label for=""> HERE&NOW</label>
           </form>
@@ -89,14 +89,13 @@
         <div id="filterPrice">
           <h5>PRICE</h5>
           <form action="">
-            <input class="price" type="checkbox" value="124-4843"/>
-            <label for=""> Rs. 124 to Rs. 4843</label><br />
-            <input class="price" type="checkbox" value="4843-9562"/>
-            <label for=""> Rs. 4843 to Rs. 9562</label><br />
-            <input class="price" type="checkbox" value="9562-4281" />
-            <label for=""> Rs. 9562 to Rs. 14281</label><br />
-            <input class="price" type="checkbox" value="14281-19000" />
-            <label for=""> Rs. 14281 to Rs. 19000</label>
+            <input class="price" type="checkbox" value="124-2500"/>
+            <label for=""> Rs. 124 to Rs. 2500</label><br />
+            <input class="price" type="checkbox" value="2500-5000"/>
+            <label for=""> Rs. 2500 to Rs. 5000</label><br />
+            <input class="price" type="checkbox" value="5000-7500" />
+            <label for=""> Rs. 5000 to Rs. 7500</label><br />
+            
           </form>
         </div>
         <hr />
@@ -128,29 +127,37 @@
         <div style="height: 400px" id="flterDiscountRange">
           <h5>DISCOUNT RANGE</h5>
           <form action="">
-            <input type="checkbox" />
+            <input class="discount" type="checkbox" value="10"/>
             <label for=""> 10% and above</label><br />
-            <input type="checkbox" />
+            <input class="discount" type="checkbox" value="20" />
             <label for=""> 20% and above</label><br />
-            <input type="checkbox" />
+            <input class="discount" type="checkbox" value="30" />
             <label for=""> 30% and above</label><br />
-            <input type="checkbox" />
+            <input class="discount" type="checkbox" value="40"/>
             <label for=""> 40% and above</label><br />
-            <input type="checkbox" />
+            <input class="discount" type="checkbox" value="50" />
             <label for=""> 50% and above</label><br />
-            <input type="checkbox" />
-            <label for=""> 60% and above</label><br />
-            <input type="checkbox" />
-            <label for=""> 70% and above</label><br />
-            <input type="checkbox" />
-            <label for=""> 80% and above</label>
+           
+          
           </form>
         </div>
       </div>
+     
       <hr />
+      <div id="mob-div" >
+        <div>
+            <h5> <i class="fa-solid fa-filter"></i> Sort</h5>
+        </div>
+        <div>
+          <h5> <i class="fa-solid fa-sort"></i> Filter </h5>
+        </div>
+     </div>
       <div id="product-page-product-div">
-        <div id="product-page-item-div"></div>
-
+        
+        <div id="product-page-item-div">
+        
+        </div>
+          
         <hr />
 
         <div id="product-page-list">
@@ -173,7 +180,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- footer -->
 
     <div id="product-page-footer-parent-1">
@@ -410,10 +417,10 @@
         <div>
           <p style=" font-size: 0.7rem; font-weight: bold; opacity: 0.9;"><span>Online Shoping</span></p>
           <br />
-          <a href="./MensData/mens.html"><p>Men</p></a> 
-          <a href="./WomensData/women.html"><p>Women</p></a>
-          <a href="./kidsData/kids.html"><p>Kids</p></a> 
-          <a href="./HomeLiving/homeliving.html"><p>Home Living</p></a>
+          <a href="/productPage/MensData/mens.html"><p>Men</p></a> 
+          <a href="/productPage/WomensData/women.html"><p>Women</p></a>
+          <a href="/productPage/kidsData/kids.html"><p>Kids</p></a> 
+          <a href="/productPage/HomeLiving/homeliving.html"><p>Home Living</p></a>
           <p>Beauty</p>
           <p>Gift Cards</p>
           <p>Myntra Insider</p>

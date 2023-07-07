@@ -5,13 +5,31 @@ body {
 body p{
   opacity: 0.8;
 }
+#product-filter-div {
+  display: flex;
+}
+#product-filter-div >div:first-child {
+  
+  /* border: 1px solid #000; */
+  width: 160px;
+}
+#product-filter-div >div:last-child {
+  display: flex;
+  width: 80%;
+  /* border: 1px solid #000; */
+  justify-content: space-around;
+ 
+  
+}
+
 
 #list1{
-  
+  margin: 0;
   /* border: 1px solid #000; */
   /* height: 3rem; */
   /* overflow: hidden; */
-  margin: 1rem 0rem 0rem 12rem;
+  /* margin: 1rem 0rem 0rem 5%; */
+  
 }
 #list1 span{
   /* width: auto; */
@@ -48,9 +66,7 @@ body p{
 
 #sort-drop {
   font-size: 0.8rem;
-  
-  margin-top: 1rem;
-  margin-left: 47%;
+   
   position: relative;
   z-index: 1;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -100,6 +116,9 @@ body p{
 }
 #sort-drop div p{
   padding-left: 1rem;
+}
+#sort-drop div p{
+  
 }
 #sort-drop > div p:hover{
   

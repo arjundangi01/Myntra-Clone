@@ -148,15 +148,17 @@ body h1 {
   .slide{
       width: 20%;
       transition: 1s;
+      z-index: 1;
   }
   .slide img{
   /* width: 800px; */
   /* height: 500px; */
+  /* z-index: 1; */
   width: 100%;
   }
   
   .navigation-manual{
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   margin: -40px 40% 0 40%;
   justify-content: center;
@@ -181,6 +183,8 @@ body h1 {
       margin-left: 0;
   }
   #radio2:checked ~ .first{
+  
+    
       margin-left: -20%;
   }
   #radio3:checked ~ .first{
