@@ -7,7 +7,11 @@ document.querySelector("#continue").addEventListener("click",function(){
     // mobileNo.push(mobile);
     // localStorage.setItem("mobileno",JSON.stringify(mobile));
     localStorage.setItem("mobileno",mobile);
+    if(mobile.length =="10"){
     window.location.href="./verificationPage.html"
-    
+    }else{
+        document.querySelector("input+span").textContent="Please enter valid Mobile Number (10 digits)"
+        // window.alert("Please enter valid Mobile Number (10 digits)")
+    }
 })
 

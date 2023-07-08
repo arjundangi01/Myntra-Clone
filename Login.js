@@ -12,7 +12,7 @@ document.querySelector("form").addEventListener("submit",function(){
             console.log("moin")
             window.location.href="./admin.html"
         } else if(password===element.password && (mobileinput == element.mobile || mobileinput==element.email)){
-           window.alert("Successfully Login ")
+           window.alert("Logged in Successfully")
             window.location.href="./home.html"
         }
     })
