@@ -41,3 +41,39 @@ document.querySelectorAll(".radio_wrap").forEach(function (element) {
 var secondTabH4 = document.querySelector("#secondTab>.cash-on-delivery>h4");
 var randomNumber = Math.floor(Math.random() * 100000);
 secondTabH4.textContent = randomNumber;
+
+var cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
+var totalPrice = cartArray.reduce((acc, curr) => {
+  return acc + curr.price;
+}, 0);
+var mrpPrice = cartArray.reduce((acc, curr) => {
+  return acc + curr.strikedoffprice;
+}, 0);
+var totalPricetext = document.querySelector(".total-price>p:nth-child(2)");
+totalPricetext.textContent = `Rs. ${totalPrice}`;
+var mrpText = document.querySelector(".payment-mrp>p:nth-child(2)");
+mrpText.textContent = `Rs. ${mrpPrice}`;
+
+var discountText = document.querySelector(".payment-discount>p:nth-child(2)");
+discountText.textContent = `Rs. ${totalPrice - mrpPrice}`;
+
+var paymentButton = document.querySelectorAll(".pay-now");
+paymentButton.forEach((element) => {
+  element.addEventListener("click", function () {
+    alert("payment successfull");
+  });
+});
+
+var form = document.querySelector("credit-form");
+form.addEventListener("submit", function () {
+  event.preventDefault();
+  var cardNumber = form.cardNumber.value;
+  var cardName = form.cardName.value;
+  var date = form.date.value;
+  var cvv = form.cvv.value;
+  if (cardName == "" || cardNumber == "" || date == "" || cvv == "") {
+    window.alert("fill details");
+  } else {
+    window.alert("payment successfull");
+  }
+});

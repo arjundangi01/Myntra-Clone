@@ -77,13 +77,13 @@ addToCartButton.addEventListener("click", function () {
   arrow.addEventListener("click", function () {
     var cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
     obj = {
-      imgUrl: element.image1,
+      imgUrl: itemObj.imageURL1,
 
-      brand: element.brand,
-      name: element.name,
-      price: element.price,
-      strikedoffprice: element.strikedoffprice,
-      discount: element.discount,
+      brand: itemObj.brand,
+      name: itemObj.name,
+      price: itemObj.discountedPrice,
+      strikedoffprice: itemObj.price,
+      discount: itemObj.discountPercentage,
     };
     cartArray.push(obj);
     localStorage.setItem("cartArray", JSON.stringify(cartArray));
