@@ -63,17 +63,3 @@ paymentButton.forEach((element) => {
     alert("payment successfull");
   });
 });
-
-var form = document.querySelector("credit-form");
-form.addEventListener("submit", function () {
-  event.preventDefault();
-  var cardNumber = form.cardNumber.value;
-  var cardName = form.cardName.value;
-  var date = form.date.value;
-  var cvv = form.cvv.value;
-  if (cardName == "" || cardNumber == "" || date == "" || cvv == "") {
-    window.alert("fill details");
-  } else {
-    window.alert("payment successfull");
-  }
-});
