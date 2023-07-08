@@ -109,6 +109,7 @@ form.addEventListener("submit", function () {
   displayAdminTable(adminArray);
 });
 
+itemName.textContent = itemObj.name;
 function displayAdminTable(adminArray) {
   var tbody = document.querySelector("tbody");
   tbody.innerHTML = "";
