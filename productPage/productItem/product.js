@@ -374,7 +374,18 @@ function display(array) {
     wishlist_button.setAttribute("id", "wishlist-btn");
     namePriceDiv.append(wishlist_button,name, smalldiv);
     wishlist_button.addEventListener("click", function () {
-      
+      var cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
+      obj = {
+        imgUrl: element.image1,
+
+        brand: element.brand,
+        name: element.name,
+        price: element.price,
+        strikedoffprice: element.strikedoffprice,
+        discount: element.discount,
+      };
+      cartArray.push(obj);
+      localStorage.setItem("cartArray", JSON.stringify(cartArray));
     });
 
     // ---------------------------------------------------------------------------
