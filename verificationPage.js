@@ -21,8 +21,12 @@ function getotp() {
   }
 
     window.alert(`${b}`)
-
-
+    
+    function move(first,last){
+        if(first.value.length){
+            document.getElementById(last).focus();
+        }
+    }
 
 
 next.addEventListener("click",function(){
@@ -40,7 +44,7 @@ var b4=document.querySelector("#box4").value
             window.alert("Logged in Successfully")
             window.location.href="./home.html"
         }
-    }else if(b1==4 && b2==4 && b3==4 && b4==4 && next.textContent=="LOGIN"){
+    }else if(b1==b[0] && b2==b[1] && b3==b[2] && b4==b[3]  && next.textContent=="LOGIN"){
         window.location.href="./admin.html"
     }
 })
