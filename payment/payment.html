@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="dummy.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+    .payment-wrapper {
+      width: 50%;
+      position: absolute;
+      top: 70%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+    }
+    .tab {
+      float: left;
+      /* border: 1px solid #ccc; */
+      background-color: #f9f9f9f7;
+      width: 25%;
+      height: 500px;
+      border-radius: 10px 0 0 10px;
+    }
+
+    .tab button {
+      display: block;
+      background-color: #f9f9f9f7;
+      color: black;
+      font-weight: bold;
+      padding: 22px 16px;
+      width: 90%;
+      border: none;
+      outline: none;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 13px;
+      margin: 5%;
+      border-radius: 4px;
+    }
+
+    .tab button:hover {
+      background-color: #bee9f7;
+    }
+
+    .tab button.active {
+      background-color: #f9f9f9f7;
+      border-left: 4px solid rgb(230, 24, 58);
+      border-radius: 0px;
+      color: rgb(247, 26, 63);
+    }
+
+    .tabcontent {
+      float: left;
+      padding: 0px 12px;
+      border: 1px solid #ccc;
+      width: 70%;
+      border-left: none;
+      height: 500px;
+      border-radius: 0 10px 10px 0;
+    }
+    .recommended {
+      width: 90%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 10%;
+      font-weight: bold;
+      margin-left: 5%;
+    }
+    .tabcontent h5 {
+      margin-top: 10%;
+      margin-bottom: 8%;
+      margin-left: 5%;
+    }
+    .cash-on-delivery i {
+      margin-left: 59%;
+    }
+    .google-pay {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      /* justify-content: space-around; */
+    }
+    .google-pay img {
+      width: 7%;
+      margin-left: 65%;
+    }
+    .phonpe {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .phonpe img {
+      width: 7%;
+      margin-left: 72%;
+    }
+    .pay-now {
+      border: none;
+      color: whitesmoke;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 0.6rem 2rem;
+      letter-spacing: 0.5px;
+      border-radius: 4px;
+      background-color: rgb(244, 88, 114);
+    }
+    #secondTab {
+      display: grid;
+      place-items: center;
+    }
+    #secondTab .cash-on-delivery {
+      width: 80%;
+      height: 80%;
+      margin: auto;
+      margin-top: 10%;
+      margin-left: 10px;
+      /* border: 1px solid black; */
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      gap: 5%;
+    }
+    #secondTab .cash-on-delivery h5 {
+      margin: 0%;
+    }
+    #secondTab .cash-on-delivery input {
+      height: 40px;
+      outline: none;
+      border: 0.5px solid grey;
+    }
+    #secondTab .cash-on-delivery p {
+      background-color: rgb(225, 223, 223);
+
+      font-weight: 500;
+      border-radius: 2px;
+      font-size: 14px;
+      color: rgb(95, 94, 94);
+    }
+    .credit {
+      margin-left: 20%;
+      margin-top: 10%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .credit input {
+      outline: none;
+      border: 0.5px solid grey;
+      height: 50px;
+      width: 80%;
+    }
+    .credit button {
+      width: 80%;
+    }
+    .credit-banner {
+      background-color: rgb(255, 255, 255);
+      width: 80%;
+      border: solid 0.3px rgb(218, 218, 218);
+      display: flex;
+      margin-left: 10%;
+      margin-top: 10%;
+      gap: 20px;
+      align-items: center;
+      padding: 5px;
+    }
+    .credit-banner .credit-banner-desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .credit-banner img {
+      width: 14%;
+      height: 96%;
+    }
+    .credit-banner .credit-banner-desc h6 {
+      font-weight: bold;
+    }
+    .credit-banner .credit-banner-desc p {
+      color: grey;
+      font-size: 12px;
+    }
+
+    #thirdTab {
+    }
+    .date-and-cvv {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .top {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      margin-left: 20%;
+    }
+    .offer-desc {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .offer-desc-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .offer-desc img {
+      width: 12%;
+      height: 95%;
+    }
+    .offer-desc-text p {
+      font-size: 12px;
+      color: grey;
+    }
+    .offers {
+      flex-basis: 60%;
+      height: 130px;
+      border: solid 0.5px rgb(202, 201, 201);
+      padding: 10px;
+      padding-left: 10px;
+      display: grid;
+      place-items: center;
+    }
+    .payment-desc {
+      flex-basis: 30%;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav img {
+      width: 10%;
+    }
+    nav > p {
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 14px;
+      color: grey;
+    }
+    nav > p > img {
+      margin-right: 5%;
+      width: 25%;
+    }
+    .payment-desc {
+      display: flex;
+      flex-direction: column;
+    }
+    .payment-desc > div {
+      display: flex;
+      justify-content: space-between;
+    }
+    .payment-desc > .total-price > p {
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <nav>
+      <img src="https://images.indianexpress.com/2021/01/myntra.png" alt="" />
+      <p>BAG ........... ADDRESS .......... PAYMENT</p>
+      <p>
+        <img
+          src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png"
+          alt=""
+        />100% Secure
+      </p>
+    </nav>
+    <div class="top">
+      <div class="offers">
+        <div class="offer-desc">
+          <img
+            src="https://1000logos.net/wp-content/uploads/2021/03/Paytm_Logo.jpg"
+            alt=""
+          />
+          <div class="offer-desc-text">
+            <h6>Flat Rs. 200 Cashback</h6>
+            <p>On a min spend of Rs.500 get Rs. 200 cashback on first order</p>
+          </div>
+        </div>
+      </div>
+      <div class="payment-desc">
+        <h5>Payment</h5>
+        <p>Price Details</p>
+        <div class="payment-mrp">
+          <p>Total MRP</p>
+          <p>₹2200</p>
+        </div>
+        <div class="payment-discount">
+          <p>Discounted on MRP</p>
+          <p>-₹1000</p>
+        </div>
+        <div class="convenience-fee">
+          <p>Convenience Fee</p>
+          <p>FREE</p>
+        </div>
+        <div class="total-price">
+          <p>Total</p>
+          <p>₹5500</p>
+        </div>
+      </div>
+    </div>
+    <div class="payment-wrapper">
+      <div class="tab">
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'firstTab')"
+          id="defaultOpen"
+        >
+          <i class="fa-regular fa-star"></i> Recommended
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'secondTab')">
+          <i class="fa fa-duotone fa-money-bill"></i> Cash On Delivery
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'thirdTab')">
+          <i class="fa-solid fa-credit-card"></i> Credit/Debit
+        </button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'firstTab')"
+          id="defaultOpen"
+        >
+          <i class="fa-brands fa-paypal"></i> Phonpe/Google Pay/BHIM
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'secondTab')">
+          <i class="fa-solid fa-wallet"></i> Paytm Wallets
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'thirdTab')">
+          <i class="fa-sharp fa-solid fa-building-columns"></i> Net Banking
+        </button>
+      </div>
+
+      <div id="firstTab" class="tabcontent">
+        <h5>Recommended Payment Options</h5>
+        <div class="radio_tabs recommended">
+          <div class="cash-on-delivery">
+            <input
+              type="radio"
+              id="cash-on-delivery"
+              name="cash-on-delivery"
+              value="HTML"
+              class="input"
+            />
+            <label
+              for="cash-on-delivery"
+              class="radio_wrap"
+              data-radio="radio_1"
+              >Cash On Delivery</label
+            >
+            <i class="fa fa-duotone fa-money-bill"></i>
+          </div>
+          <div class="google-pay">
+            <input type="radio" name="google-pay" class="input" />
+            <label class="radio_wrap" data-radio="radio_2" for="google-pay"
+              >Google Pay</label
+            >
+            <img
+              src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+              alt=""
+            />
+          </div>
+          <div class="phonpe">
+            <input type="radio" name="phonpe" class = "input/>
+            <label class="radio_wrap" data-radio="radio_3" for="phonpe"
+              >Phonpe</label
+            >
+            <img
+              src="https://pixlok.com/wp-content/uploads/2021/02/PhonePe-Logo-Svg.jpg"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <div class="radio_content radio_1">
+              <button class="pay-now">Pay Now</button>
+            </div>
+            <div class="radio_content radio_2">
+              <input type="text" placeholder="Enter UPI" /><br />
+              <button class="pay-now">Pay Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="secondTab" class="tabcontent">
+        <div class="cash-on-delivery">
+          <h5>Cash On delivery (Cash/UPI)</h5>
+          <p>₹10 will be charged for cash on delivery option</p>
+          <h4></h4>
+          <input placeholder="Enter the code above" tyep="text" /><br /><br />
+          <button class="pay-now">Place Order</button><br />
+        </div>
+      </div>
+
+      <div id="thirdTab" class="tabcontent">
+        <div class="credit-banner">
+          <img
+            src="https://companieslogo.com/img/orig/KOTAKBANK.NS-36440c5e.png?t=1593960269"
+            alt=""
+          />
+          <div class="credit-banner-desc">
+            <h6>7.5% instant discount</h6>
+            <p>On every spend with myntra axis card</p>
+          </div>
+        </div>
+        <div class="credit">
+          <input type="number" placeholder="Card Number" />
+          <input type="text" placeholder="Name On Card" />
+          <div class="date-and-cvv">
+            <input type="text" placeholder="Date" />
+            <input type="number" placeholder="CVV" />
+          </div>
+          <button class="pay-now">Pay Now</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="dummy.js"></script>
+</html>
