@@ -186,11 +186,11 @@ document.querySelector("#first").addEventListener("click", function () {
 });
 
 document.querySelector("#second").addEventListener("click", function () {
-  window.location.assign("");
+  window.location.assign("./Address.html");
 });
 
 document.querySelector("#third").addEventListener("click", function () {
-  window.location.assign("");
+  window.location.assign("./payment.html");
 });
 
 document.querySelector(".wishlist").addEventListener("click", function () {
@@ -198,9 +198,9 @@ document.querySelector(".wishlist").addEventListener("click", function () {
 });
 
 document.querySelector(".makeorder").addEventListener("click", function () {
-  window.location.assign("");
+  window.location.assign("./Address.html");
 });
 
 document.querySelector("#homePage").addEventListener("click", function () {
-  window.location.assign("");
+  window.location.assign("./index.html");
 });
