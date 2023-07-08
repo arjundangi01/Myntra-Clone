@@ -25,7 +25,7 @@ function updateDisplay(arr){
     shopnow.textContent="CONTINUE SHOPPING";
 
     shopnow.addEventListener("click",function(){
-      window.location.assign("");
+      window.location.assign("./index.html");
 
     });
 
