@@ -214,7 +214,7 @@ nav ul.menu-area{
     width: 70vw;
     top: -9999px;
     left: 22%;
-    margin: -36px;
+    margin: -26px;
     /* border: 1px solid greenyellow; */
 }
 
@@ -236,7 +236,7 @@ list-style: none;
     top: 100%;
 }
 .virat:hover .studio{
-    top: 100%;
+    top: 110%;
 }
  nav ul.menu-area ul{
     /* width: 25%; */
