@@ -1,0 +1,106 @@
+
+button{
+    background-color: #ff3f6c;
+    color: white;
+    border: 10px;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+
+}
+#container{
+
+    padding: 1rem;
+    margin-top: 20px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border-radius: 4px;
+    gap:40px;
+    align-items: center;
+    margin-right: 20px;
+    
+}
+#container > div{
+    padding: 8px ;
+    height: 450px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    text-align: center;
+}
+#container> div >img{
+    width: 100%;
+    height: 250px;
+}
+#smalldiv p:nth-child(2){
+    text-decoration: line-through;
+    color: gray;
+  
+}
+#smalldiv p:last-child{
+    
+    color: #f3958f;
+  
+}
+
+#smalldiv{
+    display: flex;
+    
+    justify-content: space-around;
+}
+
+.wishcount{
+
+    color: #313b52;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.wishhead{
+    font-size: 1.5rem;
+    margin-top: 100px;
+    border: none;
+}
+
+h2{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 16px;
+}
+#emptylist{
+    display: none;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+#emptylist button{
+
+    color: #3466e8;
+    background-color: #FFFFFF;
+    border: 2px solid #3466e8;
+    padding: 16px 40px;
+    font-weight: 400;
+
+    margin-left: -210px;
+    text-shadow: #3466e8;
+}
+
+#emptylist>h2,p{
+
+    text-decoration: none;
+    
+    
+}
+
+#emptylist>p{
+
+    color: gray;
+}
+#emptylist>img{
+    height: 250px;
+    margin-right: 30px;
+}
