@@ -427,13 +427,15 @@
           </div>
         </div>
         <div class="credit">
-          <input type="number" placeholder="Card Number" />
-          <input type="text" placeholder="Name On Card" />
-          <div class="date-and-cvv">
-            <input type="text" placeholder="Date" />
-            <input type="number" placeholder="CVV" />
-          </div>
-          <button class="pay-now">Pay Now</button>
+          <form action="" id="credit-form">
+            <input type="number" placeholder="Card Number" id="cardNumber" />
+            <input type="text" placeholder="Name On Card" id="name" />
+            <div class="date-and-cvv">
+              <input type="text" placeholder="Date" id="date" />
+              <input type="number" placeholder="CVV" id="cvv" />
+            </div>
+            <button for="submit" class="pay-now">Pay Now</button>
+          </form>
         </div>
       </div>
     </div>
