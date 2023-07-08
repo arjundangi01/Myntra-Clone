@@ -6,16 +6,28 @@
    padding-left: 30px;
     
  
-    
+   
+}
+
+.profile{
+   
+margin-top: 10px;
 }
 .max{
-    margin-left: 2.5rem;
-    margin-right: 12px;
+    margin-left: 1.5rem;
+    margin-right: 0.5rem;
      display: flex;
     flex-direction: column;
-    /* border: 1px solid #000;  
-    height: 80px; */
-    width: 20px;
+   
+    width: fit-content;
+   
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 3rem;
+}
+.max img{
+    padding-bottom: 4px;
 }
 
 .item-center{
@@ -24,45 +36,65 @@
 .content-center{
     justify-content: center;
 }
+.flex{
+    padding-left: 3px;
+}
 
+.flex >li {
+   
+    list-style: none;
+
+   
+    padding-top: 17px; 
+    }
 .flex li a{
 text-decoration:none ;
 color: black;
 font-weight: bold;
+list-style: none;
+padding: 0 15px;
+letter-spacing: 0.1em
+  
 }
 
+.hrline{
+    border:   0.5px solid grey ;
+    height: px;
+    width: 75%;
+    background-color: lightgrey;
+    margin-left: -10px;
+}
 .logo{
     width: 30px;
     height: 30px;
     background-color: white;
-    margin-bottom: -7px;
+    margin-bottom: -5px ;
+    
 }
 .logohref{
 text-decoration: none;
 color: black;
 font-weight: bold;
-font-size: 10px;
+ font-size: 10px;
+ margin-top: 5px; 
 }
 
 .grid{
-    display: grid;
+   display: grid;
     grid-template-columns: repeat(8,1fr);
+   
    
 }
 .lastitem{
     height: fit-content;
-    /* width: 80%; */
+    margin-bottom: -0.5rem;
 }
 .lastitem img{
     width: 100%;
    
-    /*  */
+    
 }
-.lastgrid{
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    grid-gap: 2px;
-}
+
 
 h1{
     font-weight: bolder;
