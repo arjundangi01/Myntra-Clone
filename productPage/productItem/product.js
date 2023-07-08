@@ -55,7 +55,7 @@ var mensData = [
     price: "Rs 797",
     strikedoffprice: "MRP ₹1899",
     discount: "(58% off)",
-    discountRange: 50,
+    discountRange: "50",
 
     color: "green",
     country: "India",
@@ -75,7 +75,7 @@ var mensData = [
     price: "Rs 2699",
     strikedoffprice: "MRP ₹3599",
     discount: "(25% off)",
-    discountRange: 25,
+    discountRange: "25",
 
     color: "white",
     country: "All",
@@ -372,22 +372,25 @@ function display(array) {
       '<i class="fas fa-thin fa-heart" style="color: #ff3f6c "></i> WishList';
 
     wishlist_button.setAttribute("id", "wishlist-btn");
-    namePriceDiv.append(wishlist_button,name, smalldiv);
+
+    namePriceDiv.append(wishlist_button, name, smalldiv);     
+
+
+  
     wishlist_button.addEventListener("click", function () {
-      var cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
-      obj = {
-        imgUrl: element.image1,
+      var wishlistArr = JSON.parse(localStorage.getItem("wishlistArr")) || [];
+    obj = {
+      imgUrl: element.image1,
 
-        brand: element.brand,
-        name: element.name,
-        price: element.price,
-        strikedoffprice: element.strikedoffprice,
-        discount: element.discount,
-      };
-      cartArray.push(obj);
-      localStorage.setItem("cartArray", JSON.stringify(cartArray));
-    });
-
+      brand: element.brand,
+      name: element.name,
+      price: element.price,
+      strikedoffprice: element.strikedoffprice,
+      discount: element.discount,
+    };
+      wishlistArr.push(obj);
+      localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+  });
     // ---------------------------------------------------------------------------
     div.append(imgDiv, h3, namePriceDiv);
 
@@ -483,7 +486,7 @@ function updateDisplay() {
       return checkbox.checked;
     })
     .map(function (checkbox) {
-      return checkbox.value;
+      return parseInt(checkbox.value);
     });
   
     var selectedOrigin = originCheckboxes
@@ -564,14 +567,19 @@ function filterAndSortProducts(selectedBrands, selectedColors, selectedPrices,se
       });
     
      
-    var discountMatch = noDiscountRangesSelected || selectedDiscount.includes(product.discountRange)
+      var discountMatch =
+      noDiscountRangesSelected ||
+      selectedDiscount.some(function (discount) {
+        return parseInt(product.discountRange) >= parseInt(discount) ;
+      });
+   
    
     var originMatch =  noOriginSelected ||  selectedOrigin.includes(product.country)
     
     return brandMatch && colorMatch && priceMatch && discountMatch && originMatch;
   });
 
- console.log(filterAndSortProducts)
+//  console.log(filterAndSortProducts)
 
   return filteredProducts;
 }

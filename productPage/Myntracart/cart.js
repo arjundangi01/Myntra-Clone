@@ -22,6 +22,8 @@ function updateDisplay(arr) {
 
   } else {
     var totalitems = cartArr.length;
+    
+
     localStorage.setItem("totalitems", totalitems);
     // console.log(totalitems);
     document.querySelector(".items").textContent = totalitems;
@@ -34,11 +36,14 @@ function updateDisplay(arr) {
 
     document.querySelector(".totalPrice").textContent = "Rs " + MRP;
 
+    localStorage.setItem("totalMRP", MRP);
+
     var totalAmt = cartArr.reduce(function (sum, a, ind) {
       // console.log(cartArr[ind].price.split(" ")[1])
       return sum + +cartArr[ind].price.split(" ")[1];
     }, 0);
     document.querySelector(".amount_pay").textContent = "Rs " + totalAmt;
+    localStorage.setItem("totalAmt", totalAmt);
 
     var applybtn = document.querySelector(".apply");
     applybtn.addEventListener("click", function () {
@@ -46,6 +51,7 @@ function updateDisplay(arr) {
       if (coupen == "MYNTRA") {
         var newtotal = (totalAmt * 80) / 100;
         document.querySelector(".amount_pay").textContent = "Rs " + newtotal;
+        localStorage.setItem("totalAmt", newtotal);
         var applyp = document.querySelector(".promocode + p");
         applyp.textContent = "You have saved Rs " + (totalAmt * 20) / 100;
         applyp.style.color = "green";
@@ -65,6 +71,8 @@ function updateDisplay(arr) {
     });
     // console.log(totalAmt)
     var totalDiscount = MRP - totalAmt;
+
+    localStorage.setItem("totalDiscount", totalDiscount);
     document.querySelector(".filldiscount").textContent =
       "Rs -" + totalDiscount;
 
