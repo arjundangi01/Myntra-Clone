@@ -47,6 +47,7 @@ body{
     margin-top: -0.7rem;
     height: 79px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* width: 100; */
 }
 #cartbar >div{
     height: 50px;
@@ -97,7 +98,8 @@ body{
     text-align: center;
     border-bottom: 1px solid #F5F5F6;
    color: gray;
-   font-size: 20px;
+   font-size: 120%;
+   
 }
 #saletime span{
     color:#fe3f9b;
@@ -110,6 +112,7 @@ body{
     width: 65%;
     margin: auto;
     gap: 2%;
+    /* aspect-ratio: 16/9; */
     /* border: 1px solid #000; */
 }
 
@@ -117,8 +120,11 @@ body{
 .container{
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+    width: 70%;
     /* border: 1px solid #000; */
     gap: 1rem;
+    /* aspect-ratio: 16/9; */
 
 }
 .container>div{
@@ -128,7 +134,8 @@ body{
  
     display: flex;
     border-radius: 4px;
-    gap: 1rem;
+    gap: 2%;
+   
     
 }
 
@@ -136,21 +143,27 @@ body{
     width: 100%;
 }
 #cartimgDiv{
-   width: 22%;
+   width: 20%;
+   /* border: 1px solid #000; */
    /* height: 10%; */
    /* border: 1px solid #d918cf; */
 
 }
 
 .container button{
-    width: 30%;
-    height: 4%;
+    width: 10%;
+    /* border: 1px solid #000; */
+    /* height: 4%; */
+    
     padding-bottom: 1rem;
     padding-top: -2rem;
+    scale: 0.9;
     /* margin-top: 50px; */
 }
 #card1{
-    width: 80%;
+    width: 70%;
+    
+    /* border: 1px solid #000; */
     /* border: 1px solid #07cb7c; */
     /* height: 50%; */
     
@@ -260,7 +273,7 @@ body{
 
 .pricediv{
     /* background-color: #e7515b */
-    width: 40%;
+    width: 30%;
     /* margin-top: 80px; */
     padding: 20px;
     border-radius: 4px;
@@ -320,7 +333,9 @@ button i{
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    
 }
+
 .pricediv .makeorder{
     margin-top: 30px;
 }
@@ -337,7 +352,8 @@ button i{
 }
 .container{
 
-    margin-top: 20px;
+   
+
    
 
 }

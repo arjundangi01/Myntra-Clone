@@ -19,13 +19,14 @@
    
   }
   #emptyWishlistbtn{
-    border: 1px solid #ff4f4f;
-    padding: 3% 3% 3% 3%;
+    border: 1px solid #3466e8;
+    padding: 5% 18% 5% 18%;
     font-weight: 600;
-    color: #ff4f4f;
+    color:   #3466e8;
     letter-spacing: 0.1rem;
     margin-top: 3%;
     background-color: white;
+    border-radius: 0.4rem;
   }
   
   /* size */
@@ -80,10 +81,12 @@
     margin-top: 8%;
     margin-left: 6%;
     border: 0.5px solid rgb(238, 36, 87);
-    background-color: rgb(255, 255, 255);
-    width: 30%;
+    color: white;
+    
+    background-color: rgba(238, 36, 86, 0.913);
+    width: 90%;
     height: 3rem;
-    border-radius: 10%;
+    border-radius: 0.24rem;
     font-size: 14px;
     cursor: pointer;
   }

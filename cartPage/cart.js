@@ -28,6 +28,8 @@ function updateDisplay(arr) {
     
 
   } else {
+    var parent = document.querySelector(".container");
+    parent.innerHTML = "";
     var totalitems = cartArr.length;
     
 
@@ -38,7 +40,7 @@ function updateDisplay(arr) {
     var sum = 0;
 
     var MRP = cartArr.reduce(function (sum, a, ind) {
-      return sum + +cartArr[ind].strikedoffprice.split(" ")[1];
+      return sum + +cartArr[ind].strikedoffprice;
     }, 0);
 
     document.querySelector(".totalPrice").textContent = "Rs " + MRP;
@@ -47,7 +49,7 @@ function updateDisplay(arr) {
 
     var totalAmt = cartArr.reduce(function (sum, a, ind) {
       // console.log(cartArr[ind].price.split(" ")[1])
-      return sum + +cartArr[ind].price.split(" ")[1];
+      return sum + +cartArr[ind].price;
     }, 0);
     document.querySelector(".amount_pay").textContent = "Rs " + totalAmt;
     localStorage.setItem("totalAmt", totalAmt);
@@ -85,8 +87,7 @@ function updateDisplay(arr) {
 
     // --------------------------------------------------------------
 
-    var parent = document.querySelector(".container");
-    parent.innerHTML = "";
+   
     arr.forEach(function (ele, ind, arr) {
       var card = document.createElement("div");
       var img = document.createElement("img");
@@ -135,14 +136,14 @@ function updateDisplay(arr) {
       var Sizep = document.createElement("h5");
       Sizep.textContent = "Size :";
       var SizeNump = document.createElement("h5");
-      SizeNump.textContent = "L";
+      SizeNump.textContent = ele.size;;
       Sdiv.append(Sizep, SizeNump);
 
       var Qdiv = document.createElement("div");
       var QuanP = document.createElement("h5");
       QuanP.textContent = "Qty :";
       var QuanNump = document.createElement("h5");
-      QuanNump.textContent = "1";
+      QuanNump.textContent = ele.quantity;
       Qdiv.append(QuanP, QuanNump);
 
       SandQ.append(Sdiv, Qdiv);

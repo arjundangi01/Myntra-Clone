@@ -377,30 +377,11 @@ nav ul li:hover ul.menu-area
 
 /* small screen */
 @media (max-width: 767px) {
-    .nav{
-        /* flex-direction: column; */
+    header{
+        
        
     }
-    .section2 .grid{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-    }
-    .section3 .grid{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-       
-    }
-    .section4 .grid{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-       
-    
-  }
-  .section5 .grid{
-    visibility: hidden;
-    
-
-}
+   
   }
 
   /* medium screen */

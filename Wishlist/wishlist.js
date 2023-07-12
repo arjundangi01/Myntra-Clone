@@ -46,7 +46,6 @@ function display(array) {
         '<i class="fa-solid fa-xmark" style="color: #000000;opacity: 0.7;scale:1;"></i>';
       removeBtn.setAttribute("id", "removeBtn");
       removeBtn.addEventListener("click", function () {
-       
         wishlistArr.splice(index, 1);
         localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
         display(wishlistArr);
@@ -107,8 +106,6 @@ function display(array) {
       cartButton.textContent = "MOVE TO BAG";
       cartButton.setAttribute("id", "cartButton");
 
-   
-
       cartButton.addEventListener("click", function () {
         var selectSizeAlert = document.querySelector(".select-size-alert");
         selectSizeAlert.style.display = "none";
@@ -117,31 +114,83 @@ function display(array) {
         var crossBtn = document.querySelector("#crossBtn");
         crossBtn.addEventListener("click", function () {
           sizePopup.style.display = "none";
+        });
          
-        });
-        
-        var parentElement = document.querySelector(".size-buttons"); // Replace with the appropriate parent element selector
-        parentElement.addEventListener("click", function(event) {
-          if (event.target.id === "xyz") {
-            // Handle button click
-           var  a = event.target.value
-            console.log("Button with ID 'xyz' clicked!");
-            doSomethingWithA(a);
-          }
-        });
+        var cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
+
+         var discount = Math.round(((element.strikedoffprice - element.price ) / element.strikedoffprice )* 100) 
+         itemObj = {
+          imgUrl: element.image1,
+          brand: element.brand,
+          name: element.name,
+          price: element.price,
+          strikedoffprice: element.strikedoffprice,
+          discount: discount,
+         quantity: 1,
+        };
+
        
-        function doSomethingWithA(size) {
-          var goTocart = document.querySelector("#goTocart");
-          goTocart.addEventListener("click", function () {
-            console.log(size)
+  
+      
+       
+        var sizeButton = document.querySelectorAll("#xyz");
+          var sizeButtonArray = Array.from(sizeButton);
+          sizeButtonArray.forEach(function (btn) {
+             btn.addEventListener("click", function () {
+              defaultButtonclass(sizeButtonArray);
+               btn.classList.add("clicked");  
+               btn.style.color = "red";
+               itemObj["size"] = btn.value;
+              
+               
+            })
           })
-        }
         
+          
+          var sizeButtonClicked = sizeButtonArray.filter((element) => {
+            return element.classList.contains("clicked") > 0;
+          });
+        
+        
+        // console.log(addedItem)
+        
+          
+        var sizeSubmit = document.querySelector("#sizeSubmitbtn");
+        sizeSubmit.addEventListener("click", function () {
+
+          var addedItem = cartArray.find((element) => {
+         
+            return (
+              element.brand == itemObj.brand &&
+              element.name == itemObj.name &&            
+              element.size ==  itemObj.size
+            );
+          });
+          if (addedItem) {
+            addedItem.quantity += 1;
+            addedItem.price += element.price;
+            addedItem.strikedoffprice +=  element.strikedoffprice;
+          } else {
+            cartArray.push(itemObj);
+           
+          }
+          localStorage.setItem("cartArray", JSON.stringify(cartArray));
+          sizePopup.style.display = "none";
+          wishlistArr.splice(index, 1);
+          localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+    
+          
+          display(wishlistArr);
+         
+
+         
+        })
        
-     
-      
-      
-      
+
+        // var selectSizeAlert = document.querySelector(".select-size-alert");
+        // if (sizeButtonClicked.length == 0) {
+        //   selectSizeAlert.style.display = "block";
+        // }
       });
       // ---------------------------------------------------------------------------
       div.append(removeBtn, imgDiv, nameDiv, smalldiv, cartButton);
@@ -149,4 +198,11 @@ function display(array) {
       parent.append(div);
     });
   }
+}
+
+function defaultButtonclass(btnArray) {
+  btnArray.forEach(function (btn) {
+    btn.style.color = "black"
+    btn.classList.remove("clicked");
+   })
 }
