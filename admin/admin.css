@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500&display=swap");
+
 * {
   font-family: "Poppins";
 }
@@ -136,29 +137,76 @@ nav > .left > h2 {
     rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
-.admin-table {
-  margin-left: 3%;
+.admin-table-wrapper {
+  margin-left: 10%;
   width: 67%;
 }
-table {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-radius: 20px;
-  margin: auto;
+.admin-table {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 20px;
 }
-table {
-  padding: 15px;
-}
-table th,
-td {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+.admin-table-wrapper > h2 {
   text-align: center;
 }
-table td {
-  border-collapse: collapse;
-  border-bottom: solid 1px rgb(233, 226, 226);
-  color: rgb(107, 106, 106);
+.admin-table div > img {
+  width: 100%;
+  height: 60%;
+}
+.admin-table .type-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.admin-table .price-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.admin-table .price-container p {
+  font-size: 14px;
+}
+.admin-table .price-container p:nth-child(1) {
+  font-size: 14px;
+  color: black;
+}
+.admin-table .price-container p:nth-child(2) {
+  color: grey;
+  text-decoration: line-through;
+}
+.admin-table .price-container p:nth-child(3) {
+  color: rgb(245, 79, 107);
+}
+.adm .admin-table > div > div > p {
+}
+.admin-table > div > div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  gap: -5px;
+}
+.admin-table > div > div:nth-child(3) > * {
+  margin: 0;
+}
+.admin-table > div > button {
+  width: 100%;
+  padding: 0.3rem 0;
+  background-color: rgb(255, 70, 70);
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+}
+.admin-table > div > div > p:nth-child(1) {
+  font-size: 16px;
+  color: black;
+  font-weight: bolder;
+}
+.admin-table > div > div > p:nth-child(2) {
+  font-size: 14px;
+  color: rgb(147, 147, 147);
   font-weight: bold;
+}
+.admin-table > div > div > div > * {
+  margin: 0;
+  margin-bottom: 2%;
 }

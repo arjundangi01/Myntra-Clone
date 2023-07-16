@@ -13,6 +13,7 @@
     integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="carousel.css">
 </head>
 
 <body>
@@ -557,6 +558,30 @@
    </header>
   <div class="item-body">
     <div class="item-images"></div>
+
+    <!-- Carousel -->
+
+    
+   
+        <div class="carousel" data-carousel>
+          <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+          <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+          <ul data-slides>
+            <li class="slide" data-active>
+              <img src="https://source.unsplash.com/78A265wPiO4" alt="Nature Image #1">
+            </li>
+            <li class="slide">
+              <img src="https://source.unsplash.com/eOpewngf68w" alt="Nature Image #2">
+            </li>
+            <li class="slide">
+              <img src="https://source.unsplash.com/ndN00KmbJ1c" alt="Nature Image #3">
+            </li>
+          </ul>
+        </div>
+    
+  
+    
+       <!-- Carousel -->
     <div class="item-desc-body">
       <p class="item-name">HRX by Hrithik Roshan</p>
       <p class="item-desc">Men Teal Blue Printed Pure Cotton T-shirt</p>
@@ -572,20 +597,31 @@
       </p>
       <p class='taxes'>inclusive of all taxes</p>
       <p>SELECT SIZE <span class="size-chart">Size Chart</span></p>
+      <p class="select-size-alert">Please select a size first</p>
       <div class="size-buttons">
-        <button class='.button'>S</button><button class='.button'>M</button><button class='.button'>L</button><button
-          class='.button'>XL</button><button class='.button'>XXL</button>
+       
+        <button class='.size-button'>S</button>
+        <button class='.size-button'>M</button>
+        <button class='.size-button'>L</button>
+        <button class='.size-button'>XL</button>
+        <button class='.size-button'>XXL</button>
 
       </div>
+
+
+
+      <!-- Add to cart and Wishlist Button -->
       <div class="add-buttons">
 
-        <button class="cart-button"><i class="fa-solid fa-bag-shopping" style="color: #ededed;"></i> <span>Add To
+        <button class="cart-button">
+          <i class="fa-solid fa-bag-shopping" style="color: #ededed;"></i> <span>Add To
             Bag</span></buttton>
           <button class="wishlist-button"><i class="fa fa-sharp fa-light fa-heart fa-lg"></i> Add To Wishlist</button>
       </div>
       <div class="delivery">
         <p>Delivery Options <i class="fa fa-light fa-truck"></i></p>
-        <div class="delivery-input"> <input type="text" placeholder="Enter Pincode">
+        <div class="delivery-input"> 
+          <input type="text" placeholder="Enter Pincode">
           <button>CHECK </button>
         </div>
       </div>
@@ -691,6 +727,7 @@
   </div>
 
 </body>
-<script src="script.js"></script>
+<script src="item.js"></script>
+<script src  = 'script.js'></script>
 
 </html>

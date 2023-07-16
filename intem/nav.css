@@ -322,28 +322,6 @@ nav ul.menu-area ul li a:hover {
   margin-top: 30px;
 }
 
-.slider {
-  overflow: hidden;
-}
-.slides {
-  width: 500%;
-  display: flex;
-}
-.slides input {
-  display: none;
-  background-color: blueviolet;
-}
-
-.slide {
-  width: 20%;
-  transition: 1s;
-}
-.slide img {
-  /* width: 800px; */
-  /* height: 500px; */
-  width: 100%;
-}
-
 .navigation-manual {
   position: absolute;
   display: flex;
@@ -517,4 +495,9 @@ margin-right:40% ; */
 h1 {
   font-weight: bolder;
   margin: 5vh 0 5vh 8vw;
+}
+@media screen and (max-width: 750px) {
+  header {
+    display: none;
+  }
 }

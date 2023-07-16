@@ -1,3 +1,5 @@
+// Initialization for ES Users
+
 var category = document.querySelector("#category");
 var menType = document.querySelector("#mentype");
 var womenType = document.querySelector("#womentype");
@@ -109,40 +111,51 @@ form.addEventListener("submit", function () {
   displayAdminTable(adminArray);
 });
 
-itemName.textContent = itemObj.name;
+// itemName.textContent = itemObj.name;
 function displayAdminTable(adminArray) {
-  var tbody = document.querySelector("tbody");
-  tbody.innerHTML = "";
+  var adminBody = document.querySelector(".admin-table");
+  adminBody.innerHTML = "";
   adminArray.forEach((element, index) => {
-    var categoryTd = document.createElement("td");
-    var typeTd = document.createElement("td");
-    var nameTd = document.createElement("td");
-    var brandTd = document.createElement("td");
-    var priceTd = document.createElement("td");
-    var discountedPriceTd = document.createElement("td");
-    var deleteTd = document.createElement("td");
+    var categoryTd = document.createElement("p");
+    var typeTd = document.createElement("p");
+    var nameTd = document.createElement("p");
+    var brandTd = document.createElement("p");
+    var priceTd = document.createElement("p");
+    var discountedPriceTd = document.createElement("p");
+    var discount = document.createElement("p");
+    var deleteTd = document.createElement("button");
+    var image = document.createElement("img");
+    var itemDiv = document.createElement("div");
 
+    var typeContainer = document.createElement("div");
+
+    var priceContainer = document.createElement("div");
+
+    image.src = element.imageURL1;
+    console.log(image.src);
     categoryTd.textContent = element.category;
     typeTd.textContent = element.type;
     nameTd.textContent = element.name;
     brandTd.textContent = element.brand;
-    priceTd.textContent = element.price;
-    discountedPriceTd.textContent = element.discountedPrice;
+    priceTd.textContent = `Rs.${element.price}`;
+    discountedPriceTd.textContent = `Rs.${element.discountedPrice}`;
+
+    discount.textContent = `(Rs.${
+      element.price - element.discountedPrice
+    } off)`;
+
     deleteTd.textContent = "Remove";
+    typeContainer.append(categoryTd, typeTd);
+    typeContainer.classList.add("type-container");
+    priceContainer.append(discountedPriceTd, priceTd, discount);
+    priceContainer.classList.add("price-container");
 
-    var tr = document.createElement("tr");
+    var itemDetailContainer = document.createElement("div");
+    itemDetailContainer.append(nameTd, brandTd, priceContainer);
 
-    tr.append(
-      categoryTd,
-      typeTd,
-      nameTd,
-      brandTd,
-      priceTd,
-      discountedPriceTd,
-      deleteTd
-    );
+    itemDiv.append(typeContainer, image, itemDetailContainer, deleteTd);
 
-    tbody.append(tr);
+    adminBody.append(itemDiv);
 
     deleteTd.addEventListener("click", function () {
       adminArray.splice(index, 1);
@@ -158,5 +171,18 @@ var dropDown = document.querySelector(".admin-profile>ul");
 profile.addEventListener("click", () => {
   dropDown.classList.toggle("hidden");
 });
+
+var filterCategory = document.querySelector("#filterCategory");
+filterCategory.addEventListener("change", function () {
+  if (filterCategory.value == "") {
+    displayAdminTable(adminArray);
+  } else {
+    var filteredArray = adminArray.filter(function (element, index) {
+      return element.category == filterCategory.value;
+    });
+    displayAdminTable(filteredArray);
+  }
+});
+
 displayAdminTable(adminArray);
 displayAdmin(adminArray);
