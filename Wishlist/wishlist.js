@@ -1,113 +1,241 @@
-var wishlistArr=JSON.parse(localStorage.getItem("wishlistArr"))||[];
-console.log(wishlistArr);
-var totalitems=wishlistArr.length;
-console.log(totalitems);
+var wishlistArr = JSON.parse(localStorage.getItem("wishlistArr")) || [];
 
-document.querySelector(".wishcount").innerText =` ${totalitems} Items`;
+display(wishlistArr);
 
+function display(array) {
 
-function updateDisplay(arr){
+  var parent = document.querySelector("#wishlistContainer");
+  parent.innerHTML = "";
 
-  if(arr.length==0){
-    var a=document.querySelector("#container");
+  if (wishlistArr.length == 0) {
+   
+    // parent.innerHTML = "";
+    var a = document.querySelector("#wishlistContainer");
     a.style.display = "none";
+    var b = document.querySelector("h3");
+    b.style.display = "none";
 
-    var emptydiv=document.querySelector("#emptylist");
-    emptydiv.style.display="block";
+    var emptydiv = document.querySelector("#emptyWishlist");
+    emptydiv.style.display = "block";
+    var emptyImg = document.createElement("img");
+    emptyImg.setAttribute(
+      "src",
+      "https://constant.myntassets.com/checkout/assets/img/empty-bag.webp"
+    );
+    var emptyH = document.createElement("h2");
+    emptyH.textContent = "YOUR WISHLIST IS EMPTY";
+    var emptyP = document.createElement("p");
+    emptyP.textContent =
+      "Add items that you like to your wishlist. Review them anytime and easily move them to the bag.";
 
-    var h2=document.createElement("h2");
-    h2.textContent="YOUR WISHLIST IS EMPTY";
-    var p=document.createElement("p");
-    p.textContent="Add items that you like to your wishlist."
-    var img=document.createElement("img");
-    img.setAttribute("src","https://constant.myntassets.com/checkout/assets/img/empty-bag.webp");
-    var shopnow=document.createElement("button");
-    shopnow.textContent="CONTINUE SHOPPING";
+    var emptyWishlistBtn = document.createElement("button");
+    emptyWishlistBtn.textContent = "CONTINUE SHOPING";
+    emptyWishlistBtn.setAttribute("id", "emptyWishlistbtn");
+    emptyWishlistBtn.addEventListener("click", () => {
+      window.location.assign("/Myntra-Clone/productPage/productItem/product.html")
+    })
 
-    shopnow.addEventListener("click",function(){
-      window.location.assign("");
+    emptydiv.append(emptyImg, emptyH, emptyP, emptyWishlistBtn);
+  } else {
+   
+    // parent.innerHTML = "";
+    array.forEach(function (element, index) {
+      
+      if (array.length == 1) {
+        document.querySelector("#totalWishlistItem").textContent =
+          array.length + " item";
+      } else {
+        document.querySelector("#totalWishlistItem").textContent =
+          array.length + " items";
+      }
 
-    });
+      var div = document.createElement("div");
 
-    emptydiv.append(h2,p,img,shopnow);
-    
-  }
+      var removeBtn = document.createElement("button");
+      removeBtn.innerHTML =
+        '<i class="fa-solid fa-xmark" style="color: #000000;opacity: 0.7;scale:1;"></i>';
+      removeBtn.setAttribute("id", "removeBtn");
+      removeBtn.addEventListener("click", function () {
+        wishlistArr.splice(index, 1);
+        display(wishlistArr);
+        localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+         window.location.reload();
+      });
 
-else{
+      var img = document.createElement("img");
 
-  var parent=document.querySelector("#container");
-  parent.innerHTML="";
-  arr.forEach(function(ele,ind,arr) {
+      img.setAttribute("src", element.image1);
 
-    var card=document.createElement("div");
-    var img=document.createElement("img");
-    var card1=document.createElement("div");
+      var imgDiv = document.createElement("div");
+      imgDiv.setAttribute("id", "imgDiv");
+      imgDiv.append(img);
 
-    var brandname=document.createElement("h3");
-    var producttype=document.createElement("p");
+      imgDiv.addEventListener("click", function () {
+        var itemObj = {
+          imageURL1: element.image1,
+          imageURL2: element.image2,
+          imageURL3: element.image3,
+          imageURL4: element.image4,
+          imageURL5: element.image5,
 
-    var smalldiv=document.createElement("div");
+          name: element.name,
+          brand: element.brand,
 
-    var price=document.createElement("p");
-    var stprice = document.createElement("p");
-    stprice.textContent = ele.strikedoffprice;
+          price: element.price,
+          discountedPrice: element.strikedoffprice,
+          discountPercentage:
+            (element.strikedoffprice - element.price) / element.strikedoffprice,
+        };
+        localStorage.setItem("itemDetails", JSON.stringify(itemObj));
+      });
 
-    var discount = document.createElement("p");
-    discount.textContent =ele.discount;
+      // var h3 = document.createElement("h3");
+      // h3.textContent = element.brand;
 
-    smalldiv.setAttribute("id", "smalldiv");
-    smalldiv.append(price, stprice, discount);
-    var hr=document.createElement("hr");
-    var addtocart=document.createElement("button");
-    var remove=document.createElement("button");
+      var name = document.createElement("p");
+      name.textContent = element.name;
 
-    brandname.textContent=ele.brand;
-    img.setAttribute("src",ele.imgUrl);
-    producttype.textContent=ele.name;
-    price.textContent=ele.price;
-    remove.textContent="REMOVE";
-    addtocart.textContent="Add To Cart";
+      var nameDiv = document.createElement("div");
+      nameDiv.setAttribute("id", "nameDiv");
+      nameDiv.append(name);
 
-    addtocart.addEventListener("click",function(){
+      var smalldiv = document.createElement("div");
+
+      var price = document.createElement("p");
+      price.textContent = "Rs. " + element.price;
+
+      var stprice = document.createElement("p");
+      stprice.textContent = "Rs " + element.strikedoffprice;
+
+      var discount = document.createElement("p");
+      discount.textContent = element.discount;
+
+      smalldiv.setAttribute("id", "price-small-div");
+      smalldiv.append(price, stprice, discount);
+
+      var cartButton = document.createElement("button");
+      cartButton.textContent = "MOVE TO BAG";
+      cartButton.setAttribute("id", "cartButton");
+
+      cartButton.addEventListener("click", function () {
+
+          
+        var sizeButton = document.querySelectorAll("#xyz");
+          var sizeButtonArray = Array.from(sizeButton);
+          defaultButtonclass(sizeButtonArray);        
+
+
+        var selectSizeAlert = document.querySelector(".select-size-alert");
+        selectSizeAlert.style.display = "none";
+        var sizePopup = document.querySelector("#sizeDiv");
+        sizePopup.style.display = "block";
+        var crossBtn = document.querySelector("#crossBtn");
+        crossBtn.addEventListener("click", function () {
+          sizePopup.style.display = "none";
+        });
+         
         var cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
 
-        cartArray.push(ele);
-        localStorage.setItem("cartArray", JSON.stringify(cartArray));
-        alert("Product pushed to Cart!")
-    });
+         var discount = Math.round(((element.strikedoffprice - element.price ) / element.strikedoffprice )* 100) 
+         itemObj = {
+          imgUrl: element.image1,
+          brand: element.brand,
+          name: element.name,
+          price: element.price,
+          strikedoffprice: element.strikedoffprice,
+          discount: discount,
+         quantity: 1,
+        };
 
-    remove.addEventListener("click",function(){
-      wishlistArr.splice(ind,1);
-      localStorage.setItem("wishlistArr",JSON.stringify(wishlistArr));
-    
-      alert("Product removed from Wishlist!");
-      updateDisplay(wishlistArr);
-    });
-
-    if(wishlistArr.length==0){
-      var a=document.querySelector("#container");
-      
-      var emptydiv=document.querySelector("#emptylist");
-      var h2=document.createElement("h2");
-      h2.textContent="YOUR WISHLIST IS EMPTY";
-      var p=document.createElement("p");
-      p.textContent="Add items that you like to your wishlist."
-      var img=document.createElement("img");
-      img.setAttribute("src","https://images.bewakoof.com/web/wishlistEmpty.svg");
-      var shopnow=document.createElement("button");
-      shopnow.textContent="CONTINUE SHOPPING";
-
-      emptydiv.append(h2,p,img,shopnow);
-      a.append(emptydiv);
-    }
-    
-
-    card1.append(brandname,producttype,smalldiv,addtocart,remove);
-    card.append(img,card1);
-    parent.append(card);
+       
   
+      
+       
+        var sizeButton = document.querySelectorAll("#xyz");
+          var sizeButtonArray = Array.from(sizeButton);
+          sizeButtonArray.forEach(function (btn) {
+             btn.addEventListener("click", function () {
+              defaultButtonclass(sizeButtonArray);
+               btn.classList.add("clicked");  
+               btn.style.color = "red";
+               itemObj["size"] = btn.value;
+              
+               
+            })
+          })
+        
+          
+          var sizeButtonClicked = sizeButtonArray.filter((element) => {
+            return element.classList.contains("clicked") > 0;
+          });
+        
+        
+        // console.log(addedItem)
+        
+          
+        var sizeSubmit = document.querySelector("#sizeSubmitbtn");
+        sizeSubmit.addEventListener("click", function () {
 
-  });
+          var addedItem = cartArray.find((element) => {
+         
+            return (
+              element.brand == itemObj.brand &&
+              element.name == itemObj.name &&            
+              element.size ==  itemObj.size
+            );
+          });
+          if (addedItem) {
+            addedItem.quantity += 1;
+          
+            localStorage.setItem("cartArray", JSON.stringify(cartArray));
+            sizePopup.style.display = "none";
+            wishlistArr.splice(index, 1);
+            display(wishlistArr);
+  
+            localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+            window.location.reload();
+           
+          } else {
+           
+            if (itemObj.size == undefined) {
+              var alert = document.querySelector(".select-size-alert");
+              alert.style.display = "block"
+            } else {
+            cartArray.push(itemObj);
+            localStorage.setItem("cartArray", JSON.stringify(cartArray));
+            sizePopup.style.display = "none";
+            wishlistArr.splice(index, 1);
+            display(wishlistArr);
+  
+            localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+            window.location.reload();
+            }
+           
+          }
+          
+          
+         
+
+         
+        })
+       
+
+        // var selectSizeAlert = document.querySelector(".select-size-alert");
+        // if (sizeButtonClicked.length == 0) {
+        //   selectSizeAlert.style.display = "block";
+        // }
+      });
+      // ---------------------------------------------------------------------------
+      div.append(removeBtn, imgDiv, nameDiv, smalldiv, cartButton);
+
+      parent.append(div);
+    });
+  }
 }
+
+function defaultButtonclass(btnArray) {
+  btnArray.forEach(function (btn) {
+    btn.style.color = "black"
+    btn.classList.remove("clicked");
+   })
 }
-updateDisplay(wishlistArr);
