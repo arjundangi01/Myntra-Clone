@@ -3,9 +3,13 @@ var wishlistArr = JSON.parse(localStorage.getItem("wishlistArr")) || [];
 display(wishlistArr);
 
 function display(array) {
+
   var parent = document.querySelector("#wishlistContainer");
   parent.innerHTML = "";
+
   if (wishlistArr.length == 0) {
+   
+    // parent.innerHTML = "";
     var a = document.querySelector("#wishlistContainer");
     a.style.display = "none";
     var b = document.querySelector("h3");
@@ -27,10 +31,16 @@ function display(array) {
     var emptyWishlistBtn = document.createElement("button");
     emptyWishlistBtn.textContent = "CONTINUE SHOPING";
     emptyWishlistBtn.setAttribute("id", "emptyWishlistbtn");
+    emptyWishlistBtn.addEventListener("click", () => {
+      window.location.assign("/Myntra-Clone/productPage/productItem/product.html")
+    })
 
     emptydiv.append(emptyImg, emptyH, emptyP, emptyWishlistBtn);
   } else {
+   
+    // parent.innerHTML = "";
     array.forEach(function (element, index) {
+      
       if (array.length == 1) {
         document.querySelector("#totalWishlistItem").textContent =
           array.length + " item";
@@ -47,8 +57,9 @@ function display(array) {
       removeBtn.setAttribute("id", "removeBtn");
       removeBtn.addEventListener("click", function () {
         wishlistArr.splice(index, 1);
-        localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
         display(wishlistArr);
+        localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+         window.location.reload();
       });
 
       var img = document.createElement("img");
@@ -107,6 +118,13 @@ function display(array) {
       cartButton.setAttribute("id", "cartButton");
 
       cartButton.addEventListener("click", function () {
+
+          
+        var sizeButton = document.querySelectorAll("#xyz");
+          var sizeButtonArray = Array.from(sizeButton);
+          defaultButtonclass(sizeButtonArray);        
+
+
         var selectSizeAlert = document.querySelector(".select-size-alert");
         selectSizeAlert.style.display = "none";
         var sizePopup = document.querySelector("#sizeDiv");
@@ -168,19 +186,34 @@ function display(array) {
           });
           if (addedItem) {
             addedItem.quantity += 1;
-            addedItem.price += element.price;
-            addedItem.strikedoffprice +=  element.strikedoffprice;
+          
+            localStorage.setItem("cartArray", JSON.stringify(cartArray));
+            sizePopup.style.display = "none";
+            wishlistArr.splice(index, 1);
+            display(wishlistArr);
+  
+            localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+            window.location.reload();
+           
           } else {
+           
+            if (itemObj.size == undefined) {
+              var alert = document.querySelector(".select-size-alert");
+              alert.style.display = "block"
+            } else {
             cartArray.push(itemObj);
+            localStorage.setItem("cartArray", JSON.stringify(cartArray));
+            sizePopup.style.display = "none";
+            wishlistArr.splice(index, 1);
+            display(wishlistArr);
+  
+            localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+            window.location.reload();
+            }
            
           }
-          localStorage.setItem("cartArray", JSON.stringify(cartArray));
-          sizePopup.style.display = "none";
-          wishlistArr.splice(index, 1);
-          localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
-    
           
-          display(wishlistArr);
+          
          
 
          

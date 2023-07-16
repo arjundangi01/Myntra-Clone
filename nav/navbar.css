@@ -8,6 +8,8 @@ nav hr{
 }
 .flex li:first-child h4{
     color: #f41c40;
+  margin-left: -0.8rem;
+
 }
 .flex li:first-child{
     /* border: 1px solid #d90a0a; */
@@ -17,15 +19,19 @@ nav hr{
 }
 .flex li:nth-child(2) h4{
     color: #f41cc5;
+    margin-left: -0.8rem;
 }
 .flex li:nth-child(3) h4{
     color: #f4641c;
+    margin-left: -0.8rem;
 }
 .flex li:nth-child(4) h4{
     color: #f4be1c;
+    margin-left: -0.8rem;
 }
 .flex li:nth-child(5) h4{
     color: #17c781;
+    margin-left: -0.8rem;
 }
 
 .flex li:first-child{
@@ -179,8 +185,8 @@ nav ul > li.dropdown >a::after{
     padding: 6px 40px 0 40px;
     background: white;
     text-align: top;
-  
-    box-shadow: 0 5px 10px white;
+    box-shadow: rgba(231, 227, 227, 0.1) 0px 1px 3px 0px, rgba(173, 171, 171, 0.06) 0px 1px 2px 0px;
+    /* box-shadow: 0 5px 10px white; */
     z-index: 2;
     position: absolute;
     display: -webkit-flex;
@@ -190,7 +196,7 @@ nav ul > li.dropdown >a::after{
     display: flex;
     flex-wrap: wrap;
     
-    width: fit-content;
+    width: 31%;
     height: fit-content;
     top: -9999px;
     right: 6%;
@@ -355,8 +361,8 @@ nav ul li:hover ul.menu-area
  nav ul.menu-area ul li{
     display: block;
     line-height: 2em;
-    margin-left: -40px;
-   
+    margin-left: -1.7rem;
+   /* border: 1px solid #000; */
     width: 100%;
     text-align: start;
     font-family: 'Raleway', sans-serif;
@@ -365,12 +371,52 @@ nav ul li:hover ul.menu-area
  }
 
  nav ul.menu-area ul li a{
-    margin-top: 5px;
+    margin-top: 0.31rem;
+    /* border: 1px solid #000; */
+    /* margin-left: 0.8rem; */
     
  }
  nav ul.menu-area ul li a:hover{
     color: brown;
  }
+ #smallHeader{
+    display: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* height: 5rem; */
+    
+}
+#sContent{
+    display: flex;
+    /* border: 1px solid #000; */
+}
+#sLeft{
+    width: 80%;
+    display: flex;
+    /* border: 1px solid #000; */
+}
+#sMenu{
+    margin: 2rem 0rem 0rem 2rem;
+    scale: 2.2;
+    height: 1rem;
+    /* border: 1px solid #000; */
+}
+#sLogo {
+   /* border: 1px solid #000; */
+   /* margin: 0; */
+   margin-top: 0.8rem;
+   margin-left: 1rem;
+}
+
+#sLogo img{
+    width: 40%;
+    /* border: 1px solid #000; */
+}
+#sProfile{
+    margin: 1.48rem 0rem 0rem 1rem;
+    scale: 1.5;
+}
+
+
 
 
 /* media queries for nav bar */
@@ -378,10 +424,15 @@ nav ul li:hover ul.menu-area
 /* small screen */
 @media (max-width: 767px) {
     header{
-        
+        display: none;
        
     }
-   
+    #smallHeader{
+        display: block;
+       
+        
+    }
+     
   }
 
   /* medium screen */
@@ -556,4 +607,7 @@ font-weight: bold;
 h1{
     font-weight: bolder;
     margin: 5vh 0 5vh 8vw; 
+}
+#profile{
+    /* border: 1px solid #000; */
 }

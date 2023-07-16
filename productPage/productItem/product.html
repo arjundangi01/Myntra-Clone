@@ -17,18 +17,39 @@
     
   </head>
   <body>
+    <div id="smallHeader">
+      <div id="sContent">
+         <div id="sLeft">
+          <i class="fa-solid fa-bars" id="sMenu" style="color: #080808;"></i>
+
+          <div id="sLogo">
+          <img src="https://images.indianexpress.com/2021/01/myntra.png?w=414" alt="">
+
+          </div>
+         </div>
+         <div id="sRight">
+          <img class="newone" id="sProfile" src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg" alt="">
+            
+           
+         </div>
+      </div>
+     
+  </div>
+  
+    
     <div>
+      
       <header>
         <nav class="nav">
             <div class=" left nav  item-center">
                 <div class="myntralogo"><img src="https://images.indianexpress.com/2021/01/myntra.png?w=414" alt="myntralogo"></div>
                 <ul class="flex">
             
-                <li class="dropdown"><a href="">MEN</a>
+                <li class="dropdown"><a href="/Myntra-Clone/productPage/MensData/mens.html">MEN</a>
                 <ul class="menu-area">
     <ul>
         <h4 class="mensDropdown">Top Wear</h4>
-        <li><a href="">T-Shirts</a> </li>
+        <li><a href="/Myntra-Clone/productPage/productItem/product.html">T-Shirts</a> </li>
         <li><a href="">Casual Shirts</a> </li>
         <li><a href="">Formal Shirts</a> </li>
         <li><a href="">Sweatshirts</a> </li>
@@ -205,7 +226,7 @@
                         
                                     </ul>
                 </li>
-                <li class="dropdown"> <a href="">KIDS</a>  
+                <li class="dropdown"> <a href="/Myntra-Clone/productPage/kidsData/kids.html">KIDS</a>  
                 
                     <ul class="menu-area">
                         <ul>
@@ -529,9 +550,9 @@
                 </a>
                    
                     <ul class="profiledrop">
-                        <li >Welcome</li>
-                        <li>To  access account and manage orders</li>
-                        <li>
+                        <li class="hide" >Welcome</li>
+                        <li class="hide" >To  access account and manage orders</li>
+                        <li id="profile" >
                            <button type="submit" id="login">LOGIN/SIGNUP</button>
                         </li>
                         <hr class="hrline">
@@ -558,6 +579,7 @@
         </nav>
        </header>
       </div>
+      
     <div id="productParent_0">
       <div>
         <p>Home &nbsp/&nbsp Clothing &nbsp/ &nbsp<span>Men T-shirts</span></p>

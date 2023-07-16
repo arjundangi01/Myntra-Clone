@@ -3,6 +3,7 @@
      grid-template-columns: repeat(5,1fr);
      width: 96%;
      margin: auto;
+     /* aspect-ratio: 16/9; */
      
 }
 #womens-first-section>div{

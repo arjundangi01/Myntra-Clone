@@ -189,7 +189,7 @@ body{
 #SandQ >div{
     gap: 0.4rem;
     background-color: rgba(128, 128, 128, 0.103);
-    width: 4.5rem;
+    width: 4.8rem;
 }
 #priceSmallDiv >p:nth-child(2){
     text-decoration: line-through;
@@ -387,3 +387,73 @@ button i{
 .pricediv{
     font-size: 0.84rem;
 }
+
+@media only screen and (min-width: 1191px) and (max-width: 1518px) {
+     #promo{
+        width: 50%;
+     }
+     .apply{
+        width: 20%;
+     }
+  }
+  @media only screen and (min-width: 800px) and (max-width: 1191px) {
+    .parent{
+        width: 80%;
+    }
+    #promo{
+       width: 50%;
+       font-size: 60%;
+       padding-left: 2%;
+    }
+    .apply{
+       width: 15%;
+       padding-right: 17%;
+       padding-left: 10%;
+    }
+ }
+ @media only screen and (min-width: 600px) and (max-width: 800px) {
+    
+    .parent{
+        width: 90%;
+    }
+    
+    #promo{
+       width: 50%;
+       font-size: 60%;
+       padding-left: 2%;
+    }
+    .apply{
+       width: 15%;
+       padding-right: 17%;
+       padding-left: 10%;
+    }
+ }
+ @media only screen and (min-width: 390px) and (max-width: 600px) {
+    
+    .parent{
+        width: 90%;
+    }
+    .pricediv span{
+        font-size: 80%;
+    }
+    .container{
+        font-size: 80%;
+    }
+    #SandQ >div {
+        /* font-size: 1%; */
+        width: 4rem;
+    }
+    
+    
+    
+    #promo{
+       width: 50%;
+       font-size: 60%;
+       padding-left: 2%;
+    }
+    .apply{
+       width: 15%;
+       padding-right: 17%;
+       padding-left: 10%;
+    }
+ }

@@ -66,7 +66,11 @@
     
   }
   .select-size-alert{
+    color: #ff3f49;
     display: none;
+    margin: 0.9rem 0rem -0.5rem 1.2rem;
+  
+    font-size: 80%;
   }
   .size-buttons  button {
     border: 0.5px solid rgb(238, 36, 87);
@@ -200,4 +204,57 @@
     /* margin-top: 1rem; */
     bottom: 0;
   }
-  
+  @media only screen and (min-width: 1222px) and (max-width: 1393px) {
+    #wishlistContainer{
+            
+        grid-template-columns: repeat(4, 1fr);
+        
+      }
+  }
+
+  @media only screen and (min-width: 984px) and (max-width: 1222px) {
+    #wishlistContainer{
+            
+      grid-template-columns: repeat(3, 1fr);
+      
+    }
+    #sizeDiv{
+      width: 30%;
+    }
+    #crossBtn{
+      margin-left: 27%;
+    }
+  }
+  @media only screen and (min-width: 757px) and (max-width: 984px) {
+    #wishlistContainer{
+            
+      grid-template-columns: repeat(2, 1fr);
+      
+    }
+    #sizeDiv{
+      width: 30%;
+    }
+    #crossBtn{
+      margin-left: 27%;
+    }
+
+  }
+  @media only screen and  (max-width: 757px) {
+    #wishlistContainer{
+            
+      grid-template-columns: repeat(1, 1fr);
+      
+    }
+    #sizeDiv{
+      width: 58%;
+      margin-left: 25%;
+    }
+    #crossBtn{
+      margin-left: 48%;
+      margin-top: 1%;
+     
+    }
+    #sizeDiv h2{
+      margin-top: 12%;
+    }
+  }
