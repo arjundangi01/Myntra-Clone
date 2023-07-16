@@ -24,16 +24,25 @@ document
 /* when any radio element is clicked, Get the attribute value of that clicked radio element and show the radio_content div element which matches the attribute value and hide the remaining tab content div elements */
 document.querySelectorAll(".radio_wrap").forEach(function (element) {
   element.addEventListener("click", function () {
+    radioId = element.getAttribute("for");
+    console.log(radioId);
+    document.querySelectorAll(".cod-input").forEach((element) => {
+      console.log({ element });
+      element.disabled = true;
+    });
+    var currRadio = document.getElementById(radioId);
+    console.log(currRadio);
+    currRadio.disabled = false;
     var current_raido = event.target.attributes["data-radio"];
     console.log({ current_raido });
+    current_raido.disabled = false;
+    // console.log(current_raido.attributes.for.value);
 
-    document
-      .querySelectorAll(".content .radio_content")
-      .forEach(function (element) {
-        element.hidden = true;
-        console.log(element);
-      });
-    document.querySelector("." + current_raido.value).hidden = false;
+    document.querySelectorAll(" .radio_content").forEach(function (element) {
+      element.style.display = "none";
+      console.log(element);
+    });
+    document.querySelector("." + current_raido.value).style.display = "block";
 
     console.log({ current_raido });
   });
@@ -43,12 +52,16 @@ var randomNumber = Math.floor(Math.random() * 100000);
 secondTabH4.textContent = randomNumber;
 
 var cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
+console.log(cartArray);
 var totalPrice = cartArray.reduce((acc, curr) => {
-  return acc + curr.price;
+  return acc + +curr.price;
 }, 0);
 var mrpPrice = cartArray.reduce((acc, curr) => {
-  return acc + curr.strikedoffprice;
+  console.log(acc);
+  console.log(curr.price);
+  return acc + +curr.strikedoffprice;
 }, 0);
+console.log(mrpPrice);
 var totalPricetext = document.querySelector(".total-price>p:nth-child(2)");
 totalPricetext.textContent = `Rs. ${totalPrice}`;
 var mrpText = document.querySelector(".payment-mrp>p:nth-child(2)");
