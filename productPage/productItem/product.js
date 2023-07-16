@@ -62,7 +62,7 @@ var mensData = [
     name: "Men Slim Fit  Sports T-shirt",
 
     price: "Rs 797",
-    strikedoffprice: "MRP ₹1899",
+    strikedoffprice: "Rs 1899",
     discount: "(58% off)",
     discountRange: "50",
 
@@ -86,7 +86,7 @@ var mensData = [
     name: "Men White Polo Collar T-shirt",
 
     price: "Rs 2699",
-    strikedoffprice: "MRP ₹3599",
+    strikedoffprice: "Rs 3599",
     discount: "(25% off)",
     discountRange: "25",
 
@@ -111,7 +111,7 @@ var mensData = [
     name: "Men Formula Red  Solid T-shirt",
 
     price: "Rs 494",
-    strikedoffprice: "MRP ₹899",
+    strikedoffprice: "Rs 899",
     discount: "(45% off)",
     discountRange: 40,
 
@@ -135,7 +135,7 @@ var mensData = [
     name: "U S Polo Assn Men Red T-shirt",
 
     price: "Rs 1799",
-    strikedoffprice: "MRP 2999",
+    strikedoffprice: "Rs 2999",
     discount: "(43% off)",
     discountRange: 40,
 
@@ -159,7 +159,7 @@ var mensData = [
     name: "Printed Sports T-shirt",
 
     price: "Rs 714",
-    strikedoffprice: "MRP ₹1299",
+    strikedoffprice: "Rs 1299",
     discount: "(45% off)",
     discountRange: 40,
 
@@ -183,7 +183,7 @@ var mensData = [
     name: "Polo Collar Pure Cotton T-shirt",
 
     price: "Rs 512",
-    strikedoffprice: "MRP ₹899",
+    strikedoffprice: "Rs 899",
     discount: "(43% off)",
     discountRange: 40,
 
@@ -208,7 +208,7 @@ var mensData = [
     name: "Typography Printed Sports T-Shirt",
 
     price: "Rs 869",
-    strikedoffprice: "1700",
+    strikedoffprice: "Rs 1700",
     discount: "(51% off)",
     discountRange: 50,
 
@@ -232,7 +232,7 @@ var mensData = [
     name: "Men Black Typography Printed T-shirt",
 
     price: "Rs 849",
-    strikedoffprice: "1700",
+    strikedoffprice: "Rs 1700",
     discount: "(57% off)",
     discountRange: 50,
 
@@ -253,10 +253,10 @@ var mensData = [
       "https://assets.myntassets.com/assets/images/21129224/2022/12/21/a2e6906a-edfe-4f86-b502-919f40978bae1671606380334-Tommy-Hilfiger-Men-Tshirts-9281671606379901-5.jpg?im=Crop,rect=(216,188,454,576)",
 
     brand: "Tommy Hilfiger",
-    name: "Men Brand Logo Printed Pure Cotton T-shirt",
+    name: "Men Brand Logo Pure Cotton T-shirt",
 
     price: "Rs 6800",
-    strikedoffprice: "MRP 8500",
+    strikedoffprice: "Rs 8500",
     discount: "(24% off)",
     discountRange: 20,
 
@@ -281,7 +281,7 @@ var mensData = [
     name: "Contrast Tape Cotton T-Shirt",
 
     price: "Rs 909",
-    strikedoffprice: "MRP ₹1299",
+    strikedoffprice: "Rs 1299",
     discount: "(30% off)",
     discountRange: 30,
 
@@ -305,7 +305,7 @@ var mensData = [
     name: "Men Striped Polo Collar T-shirt",
 
     price: "Rs 614",
-    strikedoffprice: "MRP ₹1399",
+    strikedoffprice: "Rs 1399",
     discount: "(51% off)",
     discountRange: 50,
 
@@ -329,7 +329,7 @@ var mensData = [
     name: "Men Green Typography Printed T-shirt",
 
     price: "Rs 454",
-    strikedoffprice: "510",
+    strikedoffprice: "Rs 510",
     discount: "(21% off)",
     discountRange: 20,
 
@@ -353,7 +353,7 @@ var mensData = [
     name: "Polo Collar Regular Fit Cotton T-shirt",
 
     price: "Rs 6000",
-    strikedoffprice: "MRP 8500",
+    strikedoffprice: "Rs 8500",
     discount: "(34% off)",
     discountRange: 30,
 
@@ -369,10 +369,9 @@ display(mensData);
 function display(array) {
   var parent = document.querySelector("#product-page-item-div");
   parent.innerHTML = "";
-  var temp = Math.min(array.length, 15);
-  for (var index = 0; index < temp; index++) {
-    var element = array[index];
 
+
+  array.forEach(function (element, index) {
     var div = document.createElement("div");
     div.addEventListener("click", function () {
       // window.location.assign("/productPage/kidsData/kids.html")
@@ -397,9 +396,9 @@ function display(array) {
         name: element.name,
         brand: element.brand,
 
-        price: element.price,
-        discountedPrice : element.strikedoffprice,
-        discountPercentage: ((element.strikedoffprice - element.price) / element.strikedoffprice * 100),
+        price: parseInt(element.price.replace("Rs ", "")),
+        discountedPrice : parseInt(element.strikedoffprice.replace("Rs ", "")),
+        discountPercentage: ((parseInt(element.strikedoffprice.replace("Rs ", ""))- parseInt(element.price.replace("Rs ", ""))) / parseInt(element.strikedoffprice.replace("Rs ", ""))),
         
       };
       localStorage.setItem("itemDetails", JSON.stringify(itemObj));
@@ -446,22 +445,40 @@ function display(array) {
     wishlist_button.addEventListener("click", function () {
       var wishlistArr = JSON.parse(localStorage.getItem("wishlistArr")) || [];
       obj = {
-        imgUrl: element.image1,
+        image1: element.image1,
+        image2: element.image2,
+        image3: element.image3,
+        image4: element.image4,
+        image5: element.image5,
 
         brand: element.brand,
         name: element.name,
-        price: element.price,
-        strikedoffprice: element.strikedoffprice,
+        price: parseInt(element.price.replace("Rs ", "")),
+        strikedoffprice: parseInt(element.strikedoffprice.replace("Rs ", "")),
+        // ---------------------------------------------------------------------------check1
         discount: element.discount,
       };
-      wishlistArr.push(obj);
-      localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+      var addedItem = false;
+      wishlistArr.forEach(function (elementt) {
+        if (elementt.name == obj.name && elementt.image1 == obj.image1) {
+          addedItem = true;
+        }
+      })
+      if (addedItem) {
+        
+      } else {
+        wishlistArr.push(obj);
+        localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+      }
+     
     });
     // ---------------------------------------------------------------------------
     div.append(imgDiv, h3, namePriceDiv);
 
     parent.append(div);
-  }
+
+  })
+  
 }
 
 //
