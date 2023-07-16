@@ -10,10 +10,10 @@ document.querySelector("form").addEventListener("submit",function(){
     account.forEach(function(element,index,arr){
         if(password=="4444"&& (mobileinput == "1111111111" || mobileinput=="admin@gmail.com")){
             console.log("moin")
-            window.location.href="./admin.html"
+            window.location.href="/Myntra-Clone/admin/admin.html"
         } else if(password===element.password && (mobileinput == element.mobile || mobileinput==element.email)){
            window.alert("Logged in Successfully")
-            window.location.href="./home.html"
+            window.location.href="/Myntra-Clone/index.html"
         }
     })
 

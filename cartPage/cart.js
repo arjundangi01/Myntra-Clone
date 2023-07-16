@@ -6,41 +6,33 @@ function updateDisplay(arr) {
   // --------------------------------------------------------------
 
   if (cartArr.length == 0) {
-    var a = document.querySelector(".parent")
-    a.style.display = "none"
-    var b = document.querySelector(".wishlist")
-    b.style.display = "none"
-    
+    var a = document.querySelector(".parent");
+    a.style.display = "none";
     var emptydiv = document.querySelector("#emptyCart");
-    emptydiv.style.display = "block"
-    var emptyImg = document.createElement("img");
-    emptyImg.setAttribute("src", "https://constant.myntassets.com/checkout/assets/img/empty-bag.webp")
-    var emptyH = document.createElement("h2");
-    emptyH.textContent = "Hey, it feels so light !"
-    var emptyP = document.createElement("p");
-    emptyP.textContent = "There is nothing in your bag. Let's add some items"
+    emptydiv.style.display = "block";
+    var img = document.createElement("img");
+    img.setAttribute(
+      "src",
+      "https://constant.myntassets.com/checkout/assets/img/empty-bag.webp"
+    );
+    var h3 = document.createElement("h2");
+    h3.textContent = "Hey, it feels so light !";
+    var p1 = document.createElement("p");
+    p1.textContent = "There is nothing in your bag. Let's add some items";
 
-    var emptyWishlistBtn = document.createElement("button");
-    emptyWishlistBtn.textContent = "ADD ITEMS FROM WISHLIST"
-    emptyWishlistBtn.setAttribute("id", "emptyWishlistbtn");
-    
-    emptydiv.append(emptyImg ,emptyH,emptyP,emptyWishlistBtn);
-    
-
+    emptydiv.append(img, h3, p1);
   } else {
-    var parent = document.querySelector(".container");
-    parent.innerHTML = "";
     var totalitems = cartArr.length;
-    
 
     localStorage.setItem("totalitems", totalitems);
+
     // console.log(totalitems);
     document.querySelector(".items").textContent = totalitems;
 
     var sum = 0;
-
+    console.log(cartArr);
     var MRP = cartArr.reduce(function (sum, a, ind) {
-      return sum + +cartArr[ind].strikedoffprice;
+      return sum + +cartArr[ind].strikedoffprice * +cartArr[ind].quantity;
     }, 0);
 
     document.querySelector(".totalPrice").textContent = "Rs " + MRP;
@@ -49,7 +41,7 @@ function updateDisplay(arr) {
 
     var totalAmt = cartArr.reduce(function (sum, a, ind) {
       // console.log(cartArr[ind].price.split(" ")[1])
-      return sum + +cartArr[ind].price;
+      return sum + +a.price * +a.quantity;
     }, 0);
     document.querySelector(".amount_pay").textContent = "Rs " + totalAmt;
     localStorage.setItem("totalAmt", totalAmt);
@@ -62,7 +54,7 @@ function updateDisplay(arr) {
         document.querySelector(".amount_pay").textContent = "Rs " + newtotal;
         localStorage.setItem("totalAmt", newtotal);
         var applyp = document.querySelector(".promocode + p");
-        applyp.textContent = "You have saved Rs " + (totalAmt * 20) / 100;
+        applyp.textContent = "You have saved Rs " + Math.round((totalAmt * 20) / 100);
         applyp.style.color = "green";
         applyp.style.fontSize = "0.8rem";
       } else if (coupen == "") {
@@ -87,7 +79,8 @@ function updateDisplay(arr) {
 
     // --------------------------------------------------------------
 
-   
+    var parent = document.querySelector(".container");
+    parent.innerHTML = "";
     arr.forEach(function (ele, ind, arr) {
       var card = document.createElement("div");
       var img = document.createElement("img");
@@ -100,10 +93,29 @@ function updateDisplay(arr) {
       var producttype = document.createElement("p");
       var price = document.createElement("p");
       var stprice = document.createElement("p");
-      stprice.textContent = ele.strikedoffprice;
+      stprice.textContent = "₹" +ele.strikedoffprice*ele.quantity;
+
+      var SandQ = document.createElement("div");
+      var Sdiv = document.createElement("div");
+      var Sizep = document.createElement("h5");
+      var SizeNump = document.createElement("h5");
+      SizeNump.textContent = ele.size;
+      Sdiv.append(Sizep, SizeNump);
+
+      Sizep.textContent = "Size :";
+
+      var Qdiv = document.createElement("div");
+      var QuanP = document.createElement("h5");
+      QuanP.textContent = "Qty :";
+      var QuanNump = document.createElement("h5");
+      QuanNump.textContent = ele.quantity;
+      Qdiv.append(QuanP, QuanNump);
+
+      SandQ.append(Sdiv, Qdiv);
+      SandQ.setAttribute("id", "SandQ");
 
       var discount = document.createElement("p");
-      discount.textContent = ele.discount;
+      discount.textContent = ele.discount + "% OFF";
       var priceSmallDiv = document.createElement("div");
       priceSmallDiv.setAttribute("id", "priceSmallDiv");
       priceSmallDiv.append(price, stprice, discount);
@@ -118,7 +130,7 @@ function updateDisplay(arr) {
       brandname.textContent = ele.brand;
       img.setAttribute("src", ele.imgUrl);
       producttype.textContent = ele.name;
-      price.textContent = ele.price;
+      price.textContent = "₹" +ele.price*ele.quantity;
       remove.innerHTML =
         '<i class="fa-solid fa-xmark" style="color: #000000;"></i>';
 
@@ -126,28 +138,11 @@ function updateDisplay(arr) {
         cartArr.splice(ind, 1);
         localStorage.setItem("cartArray", JSON.stringify(cartArr));
 
-        alert("Product removed from cart!");
         updateDisplay(cartArr);
       });
 
       // ------------------size and quantity----------------------
-      var SandQ = document.createElement("div");
-      var Sdiv = document.createElement("div");
-      var Sizep = document.createElement("h5");
-      Sizep.textContent = "Size :";
-      var SizeNump = document.createElement("h5");
-      SizeNump.textContent = ele.size;;
-      Sdiv.append(Sizep, SizeNump);
 
-      var Qdiv = document.createElement("div");
-      var QuanP = document.createElement("h5");
-      QuanP.textContent = "Qty :";
-      var QuanNump = document.createElement("h5");
-      QuanNump.textContent = ele.quantity;
-      Qdiv.append(QuanP, QuanNump);
-
-      SandQ.append(Sdiv, Qdiv);
-      SandQ.setAttribute("id", "SandQ");
       // ------------------size and quantity----------------------
 
       // ---------------------Delivery---------------------
@@ -188,15 +183,24 @@ function updateDisplay(arr) {
   }
 }
 
+document.querySelector("#first").addEventListener("click", function () {
+  window.location.assign("./cart.html");
+});
 
+document.querySelector("#second").addEventListener("click", function () {
+  window.location.assign("");
+});
 
+document.querySelector("#third").addEventListener("click", function () {
+  window.location.assign("");
+});
 
 document.querySelector(".wishlist").addEventListener("click", function () {
   window.location.assign("./wishlist.html");
 });
 
 document.querySelector(".makeorder").addEventListener("click", function () {
-  window.location.assign("/Myntra-Clone/address/address.html");
+  window.location.assign("../../payment/payment.html");
 });
 
 document.querySelector("#homePage").addEventListener("click", function () {

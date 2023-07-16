@@ -35,6 +35,6 @@ document.querySelector("#button").addEventListener("click",function(){
 
     account.push(obj)
     localStorage.setItem("account",JSON.stringify(account))
-    window.location.href="./home.html"
+    window.location.assign("/Myntra-Clone/index.html")
     // localStorage.clear("account")
 })
