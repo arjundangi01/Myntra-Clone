@@ -55,15 +55,14 @@ Local Storage
 ![image](https://github.com/arjundangi01/Myntra-Clone/assets/135942012/a3a106c4-7ba0-44bc-90ae-1dd9d7961e61)
 
 
+## Product page
+![image](https://github.com/arjundangi01/Myntra-Clone/assets/135942012/7a78090b-c1bc-464f-b3c7-b28203c7df24)
 
-
-
-## Product Page
+## Product Detail Page
 ![image](https://github.com/arjundangi01/Myntra-Clone/assets/135942012/69960123-81bd-4f2c-8bee-b57c70dd8e2c)
 
 
-## Product Detail page
-![image](https://github.com/arjundangi01/Myntra-Clone/assets/135942012/7a78090b-c1bc-464f-b3c7-b28203c7df24)
+
 
 ## Cart Page
 ![image](https://github.com/arjundangi01/Myntra-Clone/assets/135942012/493321b9-4dc2-4b66-acb8-71c180183d64)
