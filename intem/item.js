@@ -43,7 +43,7 @@ function displayItem(itemObj) {
   var itemOriginalPrice = document.querySelector(".original-price>strike");
   itemOriginalPrice.textContent = `Rs. ${itemObj.price}`;
   var itemDiscountPercentage = document.querySelector(".discount-percentage");
-  itemDiscountPercentage.innerText = `(${itemObj.discountPercentage}%)`;
+  itemDiscountPercentage.innerText =  `(${itemObj.discountPercentage}%)`;
   for (var index = 0; index < images.length; index++) {
     var div = document.createElement("div");
     var img = document.createElement("img");
@@ -147,7 +147,7 @@ addToCartButton.addEventListener("click", function () {
     goToBagSpan.addEventListener("click", function () {
       /********************************* Checking for Duplicacy ************************************************* */
 
-      window.open("../productPage/Myntracart/cart.html", "_blank");
+     window.location.assign("/cartPage/cart.html")
     });
   }
 });
@@ -155,10 +155,38 @@ addToCartButton.addEventListener("click", function () {
 /******************* Wishlist Button  ********************** */
 var wishlistButton = document.querySelectorAll(".add-buttons>button");
 console.log(wishlistButton);
-wishlistButton[1].addEventListener("click", function () {
+ wishlistButton[1].addEventListener("click", function () {
   wishlistButton[1].classList.toggle("wishlist-button");
   wishlistButton[1].classList.toggle("wishlist-button-clicked");
   this.disabled = true;
+  var wishlistArr = JSON.parse(localStorage.getItem("wishlistArr")) || [];
+  obj = {
+    image1: itemObj.imageURL1,
+    image2: itemObj.imageURL2,
+    image3: itemObj.imageURL3,
+    image4: itemObj.imageURL4,
+    image5: itemObj.imageURL5,
+
+    brand: itemObj.brand,
+    name: itemObj.name,
+    price:itemObj.discountedPrice,
+    strikedoffprice: itemObj.price,
+    // ---------------------------------------------------------------------------check1
+    discount: Math.round(itemObj.discountPercentage) + "%OFF",
+  };
+  var addedItem = false;
+  wishlistArr.forEach(function (elementt) {
+    if (elementt.name == itemObj.name && elementt.image1 == itemObj.imageURL1) {
+      addedItem = true;
+    }
+  })
+  if (addedItem) {
+    
+  } else {
+    wishlistArr.push(obj);
+    localStorage.setItem("wishlistArr", JSON.stringify(wishlistArr));
+  }
+
 });
 
 //------------------------------------------------->Size Buttons<------------------------------------

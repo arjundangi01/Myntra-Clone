@@ -55,20 +55,21 @@ z-index: 99;
 margin: 0;
 }
 .myntralogo{
-    margin: 4px 0 2px -20px;
-    width: 117px;
-    height: 65px; 
-    padding-top: 12px;
+    margin: 0.25rem 0rem 0.125rem -1rem;
+    width: 6rem;
+    height: 4rem; 
+    padding-top: 0.75rem;
 }
 .myntralogo img{
    
     width: 100%;
-    font-size: 5px;
+    font-size: 0.3rem;
 }
 
  .flex li {
     font-family: 'Roboto', sans-serif;
-    font-size: 13px;
+    font-size: 0.75rem;
+    
 } 
 .nav ul{
     display: flex;
@@ -78,13 +79,13 @@ margin: 0;
    padding-right: 2rem; 
 } 
 .search{
-    width: 36vw;
+    width: 28vw;
     border: none;
     outline: none;
     background-color: #f5f5f6;
-    padding: 12px;
-    margin-right: 25px;
-    margin-left: 7%;
+    padding: 0.75rem;
+    margin-right: 1.8rem;
+    margin-left: 4rem;
     border-radius: 5px;
  
     
@@ -233,9 +234,9 @@ nav > ul > li:hover{
 }
 
 #login{
-    padding: 0.6rem 13px;
+    padding: 0.6rem 0.8125rem;
     color: #ff3f6c;
-    margin: 10px 0;
+    margin: 0.625rem 0;
     letter-spacing: 0.1em;
     font-weight: bold;
     background-color: white;
@@ -244,7 +245,7 @@ nav > ul > li:hover{
 }
 nav ul.menu-area{
     /* padding: 40px 40px 0 40px; */
-    padding-top: 40px;
+    padding-top: 2.5rem;
     background: white;
     text-align: bottom;
     /* border: 5px solid yellow; */
@@ -268,6 +269,7 @@ nav ul.menu-area{
 
 .mid-menu{
     background-color: whitesmoke;
+    
 }
 nav ul li:hover ul.menu-area
 {
@@ -284,9 +286,20 @@ nav ul li:hover ul.menu-area
   list-style: none;
 
 }
-.dropdown 
+.left{
+    /* border: 1px solid #000; */
+    width: 43rem;
+}
+nav .dropdown, nav .virat
 {
     /* border-bottom: 3px solid #f41cc5; */
+    /* border: 1px solid #000; */
+    font-size: 0.8rem;
+
+}
+nav .dropdown:nth-child(4)
+{
+    width:8.5rem;
     /* border: 1px solid #000; */
 
 }
@@ -312,7 +325,7 @@ nav ul li:hover ul.menu-area
 }
 .dropdown{
     
-    margin-bottom: -18px;
+    margin-bottom: -1.125rem;
 }
 
 
@@ -330,8 +343,8 @@ nav ul li:hover ul.menu-area
 }
 .virat{
     
-    margin-bottom: -18px;
-    height: 50px;
+    margin-bottom: -1.125rem;
+    height: 3.125rem;
 }
  nav ul.menu-area ul{
     /* width: 25%; */
@@ -348,8 +361,8 @@ nav ul li:hover ul.menu-area
     
     width: 100%;
 
-    margin-left: -30px;
-    margin-top: 10px;
+    margin-left: -1.875rem;
+    margin-top: 0.625rem;
     
  }
  nav ul.menu-area ul {
@@ -464,7 +477,29 @@ nav ul li:hover ul.menu-area
 
 }
 }
+@media (min-width: 737px) and (max-width: 1446px) {
+    nav .dropdown:nth-child(4)
+{
+    width:155px;
+    /* border: 1px solid #000; */
 
+}
+
+}
+@media (min-width: 737px) and (max-width: 1150px) {
+
+.search{
+    width: 18vw;
+    margin-left: -1.5rem;
+    margin-right: -1rem;
+
+}
+.left{
+    /* border: 1px solid #000; */
+    width: 35rem;
+    margin-left: -1.5rem;
+}
+}
 
 
 
@@ -573,8 +608,8 @@ letter-spacing: 0.1em
     margin-left: -10px;
 }
 .logo{
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
     background-color: white;
     margin-bottom: -5px ;
     

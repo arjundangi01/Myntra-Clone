@@ -32,7 +32,7 @@ function display(array) {
     emptyWishlistBtn.textContent = "CONTINUE SHOPING";
     emptyWishlistBtn.setAttribute("id", "emptyWishlistbtn");
     emptyWishlistBtn.addEventListener("click", () => {
-      window.location.assign("/Myntra-Clone/productPage/productItem/product.html")
+      window.location.assign("/productPage/productItem/product.html")
     })
 
     emptydiv.append(emptyImg, emptyH, emptyP, emptyWishlistBtn);
@@ -81,14 +81,15 @@ function display(array) {
           name: element.name,
           brand: element.brand,
 
-          price: element.price,
-          discountedPrice: element.strikedoffprice,
-          discountPercentage:
-            (element.strikedoffprice - element.price) / element.strikedoffprice,
+          price:element.strikedoffprice,
+          discountedPrice: element.price,
+          discountPercentage: Math.round(((element.strikedoffprice - element.price) / element.strikedoffprice)*100)
+            ,
         };
         localStorage.setItem("itemDetails", JSON.stringify(itemObj));
+        window.location.assign("/intem/item.html")
       });
-
+      
       // var h3 = document.createElement("h3");
       // h3.textContent = element.brand;
 

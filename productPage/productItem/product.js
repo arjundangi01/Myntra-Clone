@@ -39,8 +39,8 @@ var mensData = [
 
     price: "Rs 545",
     strikedoffprice: "Rs 1399",
-    discount: "(41% off)",
-    discountRange: "40",
+    discount: "(61% off)",
+    discountRange: "60",
 
     color: "white",
     country: "India",
@@ -136,7 +136,7 @@ var mensData = [
 
     price: "Rs 1799",
     strikedoffprice: "Rs 2999",
-    discount: "(43% off)",
+    discount: "(40% off)",
     discountRange: 40,
 
     color: "red",
@@ -209,8 +209,8 @@ var mensData = [
 
     price: "Rs 869",
     strikedoffprice: "Rs 1700",
-    discount: "(51% off)",
-    discountRange: 50,
+    discount: "(49% off)",
+    discountRange: 40,
 
     color: "black",
     country: "India",
@@ -233,7 +233,7 @@ var mensData = [
 
     price: "Rs 849",
     strikedoffprice: "Rs 1700",
-    discount: "(57% off)",
+    discount: "(50% off)",
     discountRange: 50,
 
     color: "black",
@@ -257,7 +257,7 @@ var mensData = [
 
     price: "Rs 6800",
     strikedoffprice: "Rs 8500",
-    discount: "(24% off)",
+    discount: "(20% off)",
     discountRange: 20,
 
     color: "blue",
@@ -306,7 +306,7 @@ var mensData = [
 
     price: "Rs 614",
     strikedoffprice: "Rs 1399",
-    discount: "(51% off)",
+    discount: "(56% off)",
     discountRange: 50,
 
     color: "green",
@@ -330,8 +330,8 @@ var mensData = [
 
     price: "Rs 454",
     strikedoffprice: "Rs 510",
-    discount: "(21% off)",
-    discountRange: 20,
+    discount: "(11% off)",
+    discountRange: "10",
 
     color: "green",
     country: "India",
@@ -354,8 +354,8 @@ var mensData = [
 
     price: "Rs 6000",
     strikedoffprice: "Rs 8500",
-    discount: "(34% off)",
-    discountRange: 30,
+    discount: "(29% off)",
+    discountRange: 20,
 
     color: "black",
     country: "All",
@@ -396,12 +396,14 @@ function display(array) {
         name: element.name,
         brand: element.brand,
 
-        price: parseInt(element.price.replace("Rs ", "")),
-        discountedPrice : parseInt(element.strikedoffprice.replace("Rs ", "")),
-        discountPercentage: ((parseInt(element.strikedoffprice.replace("Rs ", ""))- parseInt(element.price.replace("Rs ", ""))) / parseInt(element.strikedoffprice.replace("Rs ", ""))),
+        price: parseInt(element.strikedoffprice.replace("Rs ", "")),
+        discountedPrice : parseInt(element.price.replace("Rs ", "")),
+        discountPercentage: Math.round(((parseInt(element.strikedoffprice.replace("Rs ", ""))- parseInt(element.price.replace("Rs ", ""))) / parseInt(element.strikedoffprice.replace("Rs ", "")))*100) ,
         
       };
       localStorage.setItem("itemDetails", JSON.stringify(itemObj));
+      // console.log(itemObj.discountPercentage);
+      window.location.assign("/intem/item.html")
       
     });
 

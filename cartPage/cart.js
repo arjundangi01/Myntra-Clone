@@ -22,7 +22,9 @@ function updateDisplay(arr) {
 
     emptydiv.append(img, h3, p1);
   } else {
-    var totalitems = cartArr.length;
+    var totalitems = cartArr.reduce(function (acc, cur) {
+      return acc.quantity + +cur.quantity;
+    })
 
     localStorage.setItem("totalitems", totalitems);
 
@@ -183,26 +185,16 @@ function updateDisplay(arr) {
   }
 }
 
-document.querySelector("#first").addEventListener("click", function () {
-  window.location.assign("./cart.html");
-});
 
-document.querySelector("#second").addEventListener("click", function () {
-  window.location.assign("");
-});
-
-document.querySelector("#third").addEventListener("click", function () {
-  window.location.assign("");
-});
 
 document.querySelector(".wishlist").addEventListener("click", function () {
-  window.location.assign("./wishlist.html");
+  window.location.assign("/Wishlist/wishlist.html");
 });
 
 document.querySelector(".makeorder").addEventListener("click", function () {
-  window.location.assign("../../payment/payment.html");
+  window.location.assign("/Address/address.html");
 });
 
 document.querySelector("#homePage").addEventListener("click", function () {
-  window.location.assign("");
+  window.location.assign("/index.html");
 });

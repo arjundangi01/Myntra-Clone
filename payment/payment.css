@@ -231,19 +231,25 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 nav img {
   width: 10%;
 }
 nav > p {
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 2.5px;
   font-size: 14px;
   color: grey;
+  
 }
 nav > p > img {
   margin-right: 5%;
   width: 25%;
+}
+nav > p:last-child{
+  display: flex;
+  align-items: center;
 }
 .payment-desc {
   display: flex;
@@ -263,4 +269,77 @@ nav > p > img {
 .content input {
   height: 30px;
   margin-bottom: 20px;
+}
+.recommended label:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.704);
+  
+} 
+
+#cartbar p > #second{
+  
+  
+  padding-bottom: 5px;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+  font-size: 0.76rem;
+}
+#cartbar p > #first{
+ 
+  padding-bottom: 5px;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+  font-size: 0.76rem;
+}
+#cartbar p > #third{
+  color: #14cda8;
+  border-bottom: 2px solid  #14cda8;
+  padding-bottom: 5px;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+  font-size: 0.76rem;
+}
+
+/*  */
+#cartbar{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #F5F5F6;
+  margin: 4rem -8px;
+  margin-top: -0.5rem;
+  color: gray;
+  align-items: center;
+  height: 79px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#cartbar >div{
+  
+  height: 50px;
+  display: flex;
+ align-items: center;
+ margin: 5px 20px;
+ justify-content: space-between;
+
+}
+#cartbar span{
+  letter-spacing: 2.5px;
+ font-size: 0.8rem;
+ font-weight: 700;
+
+}
+#cartbar >div>img{
+  height: 70%;
+  cursor: pointer;
+}
+#cartbar >div:first-child{
+  margin-left: 50px;
+}
+#cartbar >div:last-child{
+  margin-right: 50px;
+}
+
+#cartbar p > *{
+  cursor: pointer;
 }

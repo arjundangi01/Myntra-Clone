@@ -21,9 +21,14 @@ document.querySelector("#button").addEventListener("click",function(){
     console.log(g)
     var am=document.querySelector("#altmobil").value
     var hm=document.querySelector("#hint").value
-
-
-    var obj={
+    
+    var userObj = {
+        mobile:mobileno,       
+        fullname:n,
+    }
+    localStorage.setItem("userObj",JSON.stringify(userObj))
+    
+    var obj = {
         mobile:mobileno,
         password:p,
         fullname:n,
@@ -35,6 +40,6 @@ document.querySelector("#button").addEventListener("click",function(){
 
     account.push(obj)
     localStorage.setItem("account",JSON.stringify(account))
-    window.location.assign("/Myntra-Clone/index.html")
+    window.location.assign("/index.html")
     // localStorage.clear("account")
 })

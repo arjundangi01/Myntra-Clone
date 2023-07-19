@@ -11,15 +11,15 @@ nav hr{
   margin-left: -0.8rem;
 
 }
-.flex li:first-child{
-    /* border: 1px solid #d90a0a; */
-    
-    /* height: 20px; */
-    
-}
+
+
+
+
 .flex li:nth-child(2) h4{
     color: #f41cc5;
     margin-left: -0.8rem;
+    
+
 }
 .flex li:nth-child(3) h4{
     color: #f4641c;
@@ -55,21 +55,29 @@ z-index: 99;
 margin: 0;
 }
 .myntralogo{
-    margin: 4px 0 2px -20px;
-    width: 117px;
-    height: 65px; 
-    padding-top: 12px;
+    margin: 0.25rem 0rem 0.125rem -1rem;
+
+    width: 6rem;
+    height: 4rem; 
+    padding-top: 0.75rem;
 }
 .myntralogo img{
    
     width: 100%;
-    font-size: 5px;
+    font-size: 0.3rem;
 }
+
+
+
+
 
  .flex li {
     font-family: 'Roboto', sans-serif;
-    font-size: 13px;
+    font-size: 0.75rem;
+
+    /* border: 1px solid #000; */
 } 
+
 .nav ul{
     display: flex;
     
@@ -229,7 +237,7 @@ nav ul > li.dropdown >a::after{
 }
 
 nav > ul > li:hover{
-    background: rgba(31, 57, 207, 0.944);
+    /* background: rgba(31, 57, 207, 0.944); */
 }
 
 #login{
@@ -240,7 +248,7 @@ nav > ul > li:hover{
     font-weight: bold;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.16);
-
+   
 }
 nav ul.menu-area{
     /* padding: 40px 40px 0 40px; */
@@ -268,6 +276,7 @@ nav ul.menu-area{
 
 .mid-menu{
     background-color: whitesmoke;
+    
 }
 nav ul li:hover ul.menu-area
 {
@@ -282,14 +291,10 @@ nav ul li:hover ul.menu-area
     top: 100%; 
     /* z-index: auto; */
   list-style: none;
+  
 
 }
-.dropdown 
-{
-    /* border-bottom: 3px solid #f41cc5; */
-    /* border: 1px solid #000; */
 
-}
 .dropdown:nth-child(2):hover 
 {
     border-bottom: 3px solid #f41cc5;
@@ -341,6 +346,7 @@ nav ul li:hover ul.menu-area
     flex-direction: column;
     /* margin-top: 5px; */
     list-style: none;
+    /* border: 1px solid #000; */
  }
  nav ul.menu-area h4{
    
@@ -350,6 +356,7 @@ nav ul li:hover ul.menu-area
 
     margin-left: -30px;
     margin-top: 10px;
+    /* border: 1px solid #000; */
     
  }
  nav ul.menu-area ul {
@@ -610,4 +617,38 @@ h1{
 }
 #profile{
     /* border: 1px solid #000; */
+}
+.left{
+    /* border: 1px solid #000; */
+    width: 43rem;
+}
+nav left .dropdown, nav .virat
+{
+    /* border-bottom: 3px solid #f41cc5; */
+    /* border: 1px solid #000; */
+    font-size: 0.8rem;
+
+}
+@media (min-width: 737px) and (max-width: 1446px) {
+    nav .dropdown:nth-child(4)
+{
+    width:155px;
+    
+
+}
+
+}
+@media (min-width: 737px) and (max-width: 1150px) {
+
+.search{
+    width: 18vw;
+    margin-left: -1.5rem;
+    margin-right: -1rem;
+
+}
+.left{
+    /* border: 1px solid #000; */
+    width: 35rem;
+    margin-left: -1.5rem;
+}
 }

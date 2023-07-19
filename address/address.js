@@ -31,11 +31,15 @@ submitbtn.addEventListener("click", function () {
         alertp.style.color = "red"
 
     } else {
-        
+        window.location.assign("/payment/payment.html")
     }
 
 
     
 
     
+})
+var homepage = document.getElementById("homePage");
+homepage.addEventListener("click", function () {
+  window.location.assign("/index.html")
 })

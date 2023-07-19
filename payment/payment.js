@@ -76,3 +76,8 @@ paymentButton.forEach((element) => {
     alert("payment successfull");
   });
 });
+
+var homepage = document.getElementById("homePage");
+homepage.addEventListener("click", function () {
+  window.location.assign("/index.html")
+})

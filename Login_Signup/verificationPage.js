@@ -1,5 +1,5 @@
 var mobileno = localStorage.getItem("mobileno") || "";
-
+var account = JSON.parse(localStorage.getItem("account")) || []
 document.querySelector("h4>span").textContent=mobileno
 
 var account = JSON.parse(localStorage.getItem("account")) || [];
@@ -7,13 +7,19 @@ var account = JSON.parse(localStorage.getItem("account")) || [];
 var next=document.querySelector("#next")
 account.forEach(function(element,index,arr){
     if(mobileno==element.mobile){
-        next.textContent="LOGIN"
+        next.textContent = "LOGIN"
+        var userObj = {
+            mobile:element.mobile,       
+            fullname: element.fullname,
+        }
+        localStorage.setItem("userObj",JSON.stringify(userObj))
     }
 })
 var otpReset = document.getElementById("resetotp");
 otpReset.addEventListener("click", () => {
     getotp();
 })
+ setTimeout(getotp,1000);
 var b;
 function getotp() {
    
@@ -47,10 +53,14 @@ var b4=document.querySelector("#box4").value
             window.location.href="./createaccount.html"
         }else{
             window.alert("Logged in Successfully")
-            window.location.href="/Myntra-Clone/index.html"
+           
+
+            window.location.href="/index.html"
         }
     }else if(finalOtp=="1234" ){
-        window.location.href="/Myntra-Clone/admin/admin.html"
+        window.location.href="/admin/admin.html"
+    } else {
+        alert("Entered wrong OTP")
     }
 })
 
